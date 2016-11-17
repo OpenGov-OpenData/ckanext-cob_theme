@@ -1,0 +1,8 @@
+<div class="vizcarousel-desc">
+  <h1 class="vizcarousel-desc-text">Newark Housing Dashboard</h1>
+  <p class="vizcarousel-desc-text author">by <a target="_blank" href="http://www.civicdashboards.com/">CivicDashboard</a></p>
+  <p class="vizcarousel-desc-text">
+    Built using <a href="http://www.civicdashboards.com/city/newark-nj-16000US3451000/">Newark, NJ housing indicators</a>.
+  </p>
+</div>
+<img src="/img/viz_1.png" alt="" style="max-height:275px; display:block; margin-left:auto; margin-right:auto;">

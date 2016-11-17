@@ -1,0 +1,10 @@
+{% set latest_datasets = h.fs_theme_recent_datasets() %}
+
+  <div class="module-content box">
+      <header>
+          <h2 class="heading">Recently Updated</h2>
+      </header>
+      <section>
+          {% snippet 'home/snippets/package_list.html', packages=latest_datasets %}
+      </section>
+  </div>

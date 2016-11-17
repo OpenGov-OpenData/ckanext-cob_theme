@@ -1,0 +1,65 @@
+{% set title = g.site_title %}
+{% set intro = g.site_intro_text %}
+
+<div role="main" class="hero">
+  <div id="content" tabindex="-1" style="display:none"></div>
+  <div class="tint"></div>
+  <div class="container">
+    <div class="row row1">
+      <div class="span6 col1">
+        <div class="module-content box">
+          <h1 class="hero-text-heading heading">{{ title }}</h1>
+          <div class="hero-text-description secondary-heading">
+          {% if intro %}
+            {{ h.render_markdown(intro) }}
+          {% else %}
+            Get started by searching from <b>{{ h.cob_theme_dataset_count() }}</b> datasets
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="span6 col2">
+        {% snippet 'home/snippets/search.html' %}        
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  {% if h.cob_theme_get_groups() %}
+  <div class="main-browse">
+    <div class="container">
+      <div class="row">
+        <div class="span12 col1">
+          <div class="module-content box">
+            <h2 class="heading"><a href="/group">Groups</a></h2>
+            {% for group in h.cob_theme_get_groups() %}
+              {% if group.package_count > 0 %}
+                <a href="/group/{{ group.name }}" class="browse-group">
+                  <img class="browse-group-image" class="homepage-group-images" src="{{ group.image_display_url or '/base/images/placeholder-group.png' }}">
+                  <div class="browse-group-title">
+                    <div class="browse-group-display-name">
+                      {{ group.display_name }}
+                    </div>
+                  </div>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="main-updates">
+    <div class="container">
+      <div class="row">
+        <div class="span6 col1">
+          {% snippet 'home/snippets/popular_datasets.html' %}
+        </div>
+        <div class="span6 col2">
+          {% snippet 'home/snippets/recent_datasets.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
