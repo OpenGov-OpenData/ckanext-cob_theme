@@ -1,4 +1,4 @@
-{% set popular_datasets = h.fs_theme_popular_datasets() %}
+{% set popular_datasets = h.cob_theme_popular_datasets() %}
 
   <div class="module-content box" style="padding:20px;">
       <header>
@@ -10,7 +10,7 @@
                 <li class="dataset-item">
                     <div class="dataset-content">
                         <h3 class="dataset-heading">{{ h.link_to(package.title or package.name, h.url_for(controller='package', action='read', id=package.name)) }}</h3>
-                        {% set curr_package = h.fs_theme_get_package_metadata(package) %}
+                        {% set curr_package = h.cob_theme_get_package_metadata(package) %}
                         <div>{{curr_package.tracking_summary.recent}} recent views</div>
                         {% if curr_package.resources %}
                           <ul class="dataset-resources unstyled">

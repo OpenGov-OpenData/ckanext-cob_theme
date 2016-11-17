@@ -50,7 +50,7 @@ within_tertiary
         <div class="{{ wrapper_class or 'module-narrow module-shallow accordion-group' }}">
           {% block facet_list_heading %}
             {% set title = title or h.get_facet_title(name) %}
-            <div class="accordion-toggle {% if title != 'Organizations' and title != 'Groups' and not h.fs_theme_is_facet_active(name) %}collapsed{% endif %}"
+            <div class="accordion-toggle {% if title != 'Organizations' and title != 'Groups' and not h.cob_theme_is_facet_active(name) %}collapsed{% endif %}"
                  data-toggle="collapse" href="#collapse-{{title}}" style="background:#e9911b;">
               <h2 class="accordion-heading" style="color:#fff; font-size:16px; margin:0; padding:9px 21px 9px 12px; position:relative;">
                 {{ title }}
@@ -58,7 +58,7 @@ within_tertiary
             </div>
           {% endblock %}
           {% block facet_list_items %}
-            <div id="collapse-{{title}}" class="collapse accordion-body {% if title == 'Organizations' or title == 'Groups' or h.fs_theme_is_facet_active(name) %}in{% endif %}">
+            <div id="collapse-{{title}}" class="collapse accordion-body {% if title == 'Organizations' or title == 'Groups' or h.cob_theme_is_facet_active(name) %}in{% endif %}">
             {% with items = items or h.get_facet_items_dict(name) %}
             {% if items %}
               <nav>

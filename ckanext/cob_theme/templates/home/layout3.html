@@ -16,28 +16,28 @@
   </div>
 </div>
 <div>
-  {% if h.fs_theme_get_showcases() %}
+  {% if h.cob_theme_get_showcases() %}
   <div class="main-featured">
     <div class="container">
       <div class="row">
         <div class="span12 col1 showcase-container">
           <div class="module-content box" style="padding-bottom:0px">
             <h2 class="heading" style="margin-bottom:0px"><a href="/showcase">Showcases</a></h2>
-            {% snippet 'home/snippets/showcase_list.html', showcases=h.fs_theme_get_showcases() %}
+            {% snippet 'home/snippets/showcase_list.html', showcases=h.cob_theme_get_showcases() %}
           </div>
         </div>
       </div>
     </div>
   </div>
   {% endif %}
-  {% if h.fs_theme_get_groups() %}
+  {% if h.cob_theme_get_groups() %}
   <div class="main-browse">
     <div class="container">
       <div class="row">
         <div class="span12 col1">
           <div class="module-content box">
             <h2 class="heading"><a href="/group">Groups</a></h2>
-            {% for group in h.fs_theme_get_groups() %}
+            {% for group in h.cob_theme_get_groups() %}
               {% if group.package_count > 0 %}
                 <a href="/group/{{ group.name }}" class="browse-group">
                   <img class="browse-group-image" alt="" src="{{ group.image_display_url or '/base/images/placeholder-group.png' }}">
