@@ -1,6 +1,34 @@
 {% ckan_extends %}
 
-{% block resource_read_title %}<h1 class="page-heading">{{ h.resource_display_name(res) | truncate(100) }}</h1>{% endblock %}
+{% block breadcrumb_content %}
+  {% if pkg %}
+    {% set dataset = h.dataset_display_name(pkg) %}
+    {% if pkg.organization %}
+      {% set organization = h.get_translated(pkg.organization, 'title') or pkg.organization.name %}
+      <li>{% link_for _('Organizations'), controller='organization', action='index' %}</li>
+      <li>{% link_for organization|truncate(30), controller='organization', action='read', id=pkg.organization.name %}</li>
+    {% else %}
+      <li>{% link_for _('Datasets'), controller='package', action='search' %}</li>
+    {% endif %}
+    <li{{ self.breadcrumb_content_selected() }}>{% link_for dataset|truncate(30), controller='package', action='read', id=pkg.name %}</li>
+  {% else %}
+    <li>{% link_for _('Datasets'), controller='package', action='search' %}</li>
+    <li class="active"><a href="">{{ _('Create Dataset') }}</a></li>
+  {% endif %}
+  {% if res.name_translated %}
+    <li class="active"><a href="">{{ h.scheming_language_text(res.name_translated)|truncate(30) }}</a></li>
+  {% else %}
+    <li class="active"><a href="">{{ h.resource_display_name(res)|truncate(30) }}</a></li>
+  {% endif %}
+{% endblock %}
+
+{% block resource_read_title %}
+  {% if res.name_translated %}
+    <h1 class="page-heading">{{ h.scheming_language_text(res.name_translated) | truncate(50) }}</h1>
+  {% else %}
+    <h1 class="page-heading">{{ h.resource_display_name(res) | truncate(50) }}</h1>
+  {% endif %}
+{% endblock %}
 
 {% block resource_actions_inner %}
 {% if h.check_access('package_update', {'id':pkg.id }) %}

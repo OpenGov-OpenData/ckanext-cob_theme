@@ -26,7 +26,7 @@
       <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
         <div class="field">
           <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" />
+          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search Datasets') }}" />
           <button class="btn-search" type="submit"><i class="icon-search"></i></button>
         </div>
       </form>
@@ -56,7 +56,7 @@
                   {{ h.build_nav_main( ('search', _('Datasets')) )}}
                   <li class="dropdown">
                     <a href="/group">
-                      Groups
+                      Topics
                       <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

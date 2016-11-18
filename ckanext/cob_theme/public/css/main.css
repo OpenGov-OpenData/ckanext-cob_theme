@@ -74,6 +74,16 @@ h4 {
 h5 {
   font-size: 12px; }
 
+h1.hero-text-heading.heading {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+  font-size: 36px;
+  line-height: 40px;
+  font-size: 2rem;
+  line-height: 2.22222rem; }
+
 h2.module-heading > i {
   display: none; }
 
@@ -186,16 +196,16 @@ thead {
   text-decoration: none; }
 
 .browse-group:hover .browse-group-title{
-  background: rgba(233,145,27, 0.8);
+  background-color: rgba(10,154,255, 0.5);
   color: white;
   cursor: pointer;
   display: inline-block;
   font-weight: 900;
-  height: 100%;
-  left: 0;
   position: absolute;
-  top: 0;
   vertical-align: middle;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%; }
 
 .browse-group:nth-child(7n+0) {
@@ -210,7 +220,7 @@ thead {
   display: none; }
 
 .browse-group-display-name {
-  padding-top: 30%; }
+  padding-top: 50px; }
 
 .browse-heading {
   margin-bottom: 28px; }
@@ -413,15 +423,15 @@ thead {
   z-index: 5; }
 
 .hero .module-search {
-  padding-top: 40px; }
+  padding-top: 0; }
 
 .hero .row {
   height: inherit; }
 
 .hero .tint {
-  background-color: rgba(10 , 75 , 110,0.45);
+  background-color: rgba(10, 154, 255, 0.5);
   position: absolute;
-  height: 480px;
+  height: 560px;
   width: 100%;
   z-index: -10; }
 
@@ -430,9 +440,6 @@ thead {
 
 .hero-text-heading {
   font-size: 36px; }
-  
-.hero-text-heading.heading{
-  border-bottom: 1px solid #ddd; }
 
 .hero-text-description {
   font-size: 18px; }
@@ -455,7 +462,8 @@ thead {
   width: 1px; }
 
 .homepage [role=main] {
-  padding: 0px; }
+  padding: 0px;
+  text-align: center; }
 
 .homepage .module-search {
   background-color: transparent;
@@ -485,6 +493,24 @@ thead {
   border-radius: 0 0 3px 3px;
   padding: 5px 10px 10px;
   zoom: 1; }
+
+.landing-hero-intro-text .intro-text {
+  color: #fff;
+  padding-bottom: 1em; }
+
+.landing-hero-logo {
+  background: #091f2f;
+  margin: 0 auto;
+  padding-top: 6px;
+  bottom: 0;
+  left: 50%;
+  height: 90px;
+  width: 90px; }
+
+.landing-hero-logo img {
+  padding-top: 15px;
+  height: 63px;
+  width: auto; }
 
 .logo {
   display: inline-block;
@@ -556,7 +582,7 @@ thead {
 
 .masthead .section.site-search.simple-input {
   float: right;
-  margin: 30px 0;
+  margin: 25px 0;
   position: relative; }
 
 .masthead .site-search {
@@ -605,7 +631,7 @@ thead {
   margin: 40px 0 10px 0; }
 
 .module-content.search-form input{
-  width: 100%; }
+  width: 60%; }
 
 .module-footer {
   padding: 0;
@@ -626,14 +652,14 @@ thead {
   background-color: #f9f9f9; }
 
 .module.module-narrow .module-heading{
-  background-color: #e9911b;
+  background-color: #091f2f;
   border: none;
   color: #fff;
   font-size: 16px;
   margin: 0; }
 
 .module.module-narrow.module-shallow h2{
-  background-color:#e9911b;
+  background-color:#091f2f;
   color: #fff;
   font-size: 16px;
   margin: 0;
@@ -660,7 +686,7 @@ thead {
   border-radius: 6px; }
 
 .module.module-narrow.social .module-heading {
-  background-color: #e9911b;
+  background-color: #091f2f;
   color: #fff; }
 
 .module.module-narrow.social .nav.nav-simple {
@@ -679,8 +705,8 @@ thead {
   padding-right: 20px; }
 
 .nav .label, .badge {
-  background-color: #fff;
-  color: #e9911b;
+  background-color: #091F2F;
+  color: #ffffff;
   padding-top: 0;
   padding-bottom: 0;
   text-shadow: none; }
@@ -720,10 +746,10 @@ thead {
   height: 70px; }
 
 .navigation-wrapper {
-  background-color: #e9911b; }
+  background-color: #091f2f; }
 
 .navigation-wrapper .caret {
-  border-top: 4px solid #ffffff;
+  border-top: 4px solid #0c2639;
   vertical-align: middle; }
 
 .resource-item .heading {
@@ -734,6 +760,9 @@ thead {
 
 .search-form {
   padding-bottom: 45px; }
+
+.search-form .search-input.search-giant button {
+  right: 21%; }
 
 .search-form .search-input.search-giant button i {
   color: #555555;
@@ -773,10 +802,9 @@ thead {
 .site-footer a,
 .site-footer label,
 .site-footer small {
-  background-color: #efefef;
-  color: #3B3B3B;
-  font-size: 90%;
-  font-weight: normal; }
+  background-color: #0c2639;
+  color: #51acff;
+  font-weight: 400; }
 
 .site-footer ul {
   list-style: none;
@@ -804,6 +832,17 @@ thead {
   left: 0;
   height: 40px;
   width: 40px; }
+
+.supporting-text {
+  color: #091f2f;
+  font-weight: 400;
+  font-style: italic;
+  line-height: inherit;
+  padding-bottom: 1em;
+  font-size: 18px;
+  line-height: 30px;
+  font-size: 1.66667rem;
+  line-height: 1.66667rem; }
 
 .unpublishedfeedback.well {
   background-color: transparent; }
@@ -899,7 +938,7 @@ thead {
     margin-left: -10px;
   }
   header .header-image.pull-left {
-    margin: 10px 20px 0px 1px;
+    margin: 10 0 0 0;
   }
   [role=main] .primary {
     float: none;
@@ -949,6 +988,12 @@ thead {
   ul, ol {
     margin: 0;
   }
+  .module-content.search-form input {
+    width: 90%
+  }
+  .search-form .search-input.search-giant button {
+    right: 8.5%
+  }
 }
 
 @media (min-width: 480px) {
@@ -958,6 +1003,13 @@ thead {
 }
 
 @media (min-width: 768px){
+  h1.hero-text-heading.heading {
+    text-transform: uppercase;
+    font-size: 75px;
+    line-height: 67px;
+    font-size: 4.16667rem;
+    line-height: 3.72222rem;
+  }
   ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;
   }
@@ -987,9 +1039,36 @@ thead {
   .wrapper {
     background-image: none;
   }
+  .node-type-landing-page .landing-hero-intro-text {
+    font-size: 30px;
+    line-height: 80px;
+    font-size: 1.66667rem;
+    line-height: 4.44444rem;
+  }
+  .landing-hero-logo {
+    width: 90px;
+    height: 90px;
+    background: #091f2f;
+    margin: 0 auto;
+    bottom: 0;
+    left: 50%;
+    padding-top: 6px;
+  }
+  .node-type-landing-page .landing-hero-logo img {
+    padding-top: 29px;
+    height: auto;
+    width: 45px;
+  }
 }
 
 @media (min-width: 980px) {
+  h1.hero-text-heading.heading {
+    font-size: 90px;
+    line-height: 85px;
+    font-size: 5rem;
+    line-height: 4.72222rem;
+    padding: 0;
+  }
   .account a {
     display: inline-block;
   }
@@ -1008,6 +1087,17 @@ thead {
   .masthead .nav-collapse {
     float: none;
     padding: 0;
+  }
+  .landing-hero-logo {
+    display: inline-block;
+    background-color: black;
+    width: 125px;
+    height: 100px;
+  }
+  .node-type-landing-page .landing-hero-logo img {
+    padding-top: 29px;
+    height: auto;
+    width: 45px;
   }
 }
 

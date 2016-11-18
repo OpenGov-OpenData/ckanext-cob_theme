@@ -6,8 +6,11 @@
   <div class="tint"></div>
   <div class="container">
     <div class="row row1">
-      <div class="span6 col1">
+      <div class="span12">
         <div class="module-content box">
+          <div class="landing-hero-intro-text">
+            <div class="intro-text supporting-text">welcome to</div>
+          </div>
           <h1 class="hero-text-heading heading">{{ title }}</h1>
           <div class="hero-text-description secondary-heading">
           {% if intro %}
@@ -18,10 +21,13 @@
           </div>
         </div>
       </div>
-      <div class="span6 col2">
-        {% snippet 'home/snippets/search.html' %}        
-      </div>
     </div>
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+  <div class="landing-hero-logo">
+    <img src="/img/b-logo-light.svg" alt="B Logo" data-pin-nopin="true">
   </div>
 </div>
 <div>
