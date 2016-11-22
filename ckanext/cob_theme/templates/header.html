@@ -22,7 +22,7 @@
       {% endblock %}
     </hgroup>
     {% block header_site_search %}
-     <section id="block-ckan-sitewide-search-bar" >
+    <section id="block-ckan-sitewide-search-bar">
       <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
         <div class="field">
           <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
@@ -30,17 +30,13 @@
           <button class="btn-search" type="submit"><i class="icon-search"></i></button>
         </div>
       </form>
-     </section>
+    </section>
     {% endblock %}
-    </div>
   </div>
-
 
   <div class="navigation-wrapper">
     <div class="container">
-        
       <nav class="navbar navbar-default" role="navigation">
-
         <div class="navbar-header">
           <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
             <span class="icon-bar"></span>
@@ -48,34 +44,19 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-
         <div class="nav-collapse collapse">
           {% block header_site_navigation %}
-              <ul class="nav nav-pills">
-                {% block header_site_navigation_tabs %}
-                  {{ h.build_nav_main( ('search', _('Datasets')) )}}
-                  <li class="dropdown">
-                    <a href="/group">
-                      Topics
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      {% for group in h.cob_theme_get_groups() %}
-                        {% if group.package_count > 0 %}
-                          <li>
-                            <a href="/group/{{ group.name }}">{{ group.display_name }}</a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
-                  </li>
-                  {{ h.build_nav_main(
-                    ('organizations_index', _('Organizations')),
-                    ('about', _('About')),
-                    ('contact_form', _('Contact Us'))
-                  ) }}
-                {% endblock %}
-              </ul>
+            <ul class="nav nav-pills">
+              {% block header_site_navigation_tabs %}
+                {{ h.build_nav_main(
+                  ('search', _('Datasets')),
+                  ('group_index', _('Topics')),
+                  ('organizations_index', _('Organizations')),
+                  ('about', _('About')),
+                  ('contact_form', _('Contact Us'))
+                ) }}
+              {% endblock %}
+            </ul>
           {% endblock %}
 
           {% block header_account %}
