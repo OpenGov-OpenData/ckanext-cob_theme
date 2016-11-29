@@ -12,36 +12,6 @@
   </a>
   {% endblock %}
   
-      {% block resource_item_explore_links %}
-      <li>
-        <a href="{{ url }}">
-          {% if res.has_views %}
-            <i class="icon-bar-chart"></i>
-            {{ _('Preview') }}
-          {% else %}
-            <i class="icon-info-sign"></i>
-            {{ _('More information') }}
-          {% endif %}
-        </a>
-      </li>
-      {% if res.url and h.is_url(res.url) %}
-      <li>
-        <a href="{{ res.url }}" class="resource-url-analytics" target="_blank">
-            <i class="icon-download"></i>
-            {{ _('Download') }}
-        </a>
-      </li>
-      {% endif %}
-      {% if can_edit %}
-      <li>
-        <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}">
-          <i class="icon-edit"></i>
-          {{ _('Edit') }}
-        </a>
-      </li>
-      {% endif %}
-      {% endblock %}
-  
   {% block resource_item_description %}
     <p class="description">
       {% if res.description_translated %}
@@ -50,4 +20,28 @@
         {{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=100) }}
       {% endif %}
     </p>
+  {% endblock %}
+
+  {% block resource_item_explore %}
+    {% if not url_is_edit %}
+      <div class="btn-group">
+        {% block resource_item_explore_links %}
+          <a href="{{ url }}" class="btn">
+            {% if res.has_views %}
+              <i class="icon-bar-chart"></i>
+              {{ _('Preview') }}
+            {% else %}
+              <i class="icon-info-sign"></i>
+              {{ _('More Info') }}
+            {% endif %}
+          </a>
+          {% if res.url and h.is_url(res.url) %}
+            <a href="{{ res.url }}" class="btn btn-primary" target="_blank">
+              <i class="icon-download"></i>
+              {{ _('Download') }}
+            </a>
+          {% endif %}
+        {% endblock %}
+      </div>
+    {% endif %}
   {% endblock %}
