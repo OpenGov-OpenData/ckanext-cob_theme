@@ -22,6 +22,9 @@ Example:
   <li class="{{ item_class or "dataset-item" }}">
     {% block content %}
       <div class="dataset-content">
+        <div class="thumb-wrapper float-left">
+         </div>
+       
         {% block heading %}
           <h3 class="dataset-heading">
             {% block heading_private %}
@@ -69,3 +72,4 @@ Example:
     {% endblock %}
   </li>
 {% endblock %}
+

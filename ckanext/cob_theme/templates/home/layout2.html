@@ -11,7 +11,7 @@
           <div class="landing-hero-intro-text">
             <div class="intro-text supporting-text">welcome to</div>
           </div>
-          <h1 class="hero-text-heading heading">{{ title }}</h1>
+          <h1 class="hero-text-heading heading">BOSTON OPEN DATA</h1>
           <div class="hero-text-description secondary-heading">
           {% if intro %}
             {{ h.render_markdown(intro) }}
@@ -37,8 +37,10 @@
       <div class="row">
         <div class="span12 col1">
           <div class="module-content box">
-            <h2 class="heading"><a href="/group">Groups</a></h2>
-            {% for group in h.cob_theme_get_groups() %}
+            <div class="strikethrough-wrapper">
+              <h2 class="heading"><a href="/group">Topics</a></h2>
+            </div>
+             {% for group in h.cob_theme_get_groups() %}
               {% if group.package_count > 0 %}
                 <a href="/group/{{ group.name }}" class="browse-group">
                   <img class="browse-group-image" class="homepage-group-images" src="{{ group.image_display_url or '/base/images/placeholder-group.png' }}">

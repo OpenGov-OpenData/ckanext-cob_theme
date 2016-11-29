@@ -9,6 +9,9 @@
               {% for package in popular_datasets %}
                 <li class="dataset-item">
                     <div class="dataset-content">
+       		       <div class="thumb-wrapper float-left">
+                       </div>
+                       <div class="text-wrapper">
                         <h3 class="dataset-heading">{{ h.link_to(package.title or package.name, h.url_for(controller='package', action='read', id=package.name)) }}</h3>
                         {% set curr_package = h.cob_theme_get_package_metadata(package) %}
                         <div>{{curr_package.tracking_summary.recent}} recent views</div>
@@ -21,7 +24,8 @@
                             {% endfor %}
                           </ul>
                         {% endif %}
-                    </div>
+                       </div>
+                     </div>
                 </li>
             {% endfor %}
           </ul>

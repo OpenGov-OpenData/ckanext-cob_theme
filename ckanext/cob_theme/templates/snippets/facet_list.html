@@ -37,6 +37,8 @@ within_tertiary
   page and not the left column.
 
 #}
+
+
 {% block facet_list %}
   {% set hide_empty = hide_empty or false %}
   {% with items = items or h.get_facet_items_dict(name) %}
@@ -51,8 +53,8 @@ within_tertiary
           {% block facet_list_heading %}
             {% set title = title or h.get_facet_title(name) %}
             <div class="accordion-toggle {% if title != 'Organizations' and title != 'Groups' and not h.cob_theme_is_facet_active(name) %}collapsed{% endif %}"
-                 data-toggle="collapse" href="#collapse-{{title}}" style="background:#091f2f;">
-              <h2 class="accordion-heading" style="color:#fff; font-size:16px; margin:0; padding:9px 21px 9px 12px; position:relative;">
+                 data-toggle="collapse" href="#collapse-{{title}}" >
+              <h2 class="accordion-heading">
                 {{ title }}
               </h2>
             </div>

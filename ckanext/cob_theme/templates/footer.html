@@ -2,7 +2,7 @@
 
     {% block footer_content %}
     <div class="row">
-      <div class="span9 col1 footer-links" style="padding-bottom:12px;">
+      <div class="span8 col1 footer-links" style="padding-bottom:12px;">
         {% block footer_nav %}
           <ul class="unstyled">
             {% block footer_links %}
@@ -17,7 +17,7 @@
           </ul>
         {% endblock %}
       </div>
-      <div class="span3 col2 attribution">
+      <div class="span4 col2 attribution">
         {% block footer_attribution %}
           <p>
             {% trans %}
@@ -29,8 +29,10 @@
             {% endtrans %}
           </p>
         {% endblock %}
+        {#
         {% block footer_lang %}
           {% snippet "snippets/language_selector.html" %}
         {% endblock %}
+        #}
       </div>
     {% endblock %}

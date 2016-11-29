@@ -1,5 +1,16 @@
 {% ckan_extends %}
 
+{% block head_extras -%}
+{% endblock -%}
+
+{% block subtitle %}
+  {% if res.name_translated %}
+    {{ h.dataset_display_name(c.package) }} - {{ h.scheming_language_text(res.name_translated) }}
+  {% else %}
+    {{ h.dataset_display_name(c.package) }} - {{ h.resource_display_name(res) }}
+  {% endif %}
+{% endblock %}
+
 {% block breadcrumb_content %}
   {% if pkg %}
     {% set dataset = h.dataset_display_name(pkg) %}

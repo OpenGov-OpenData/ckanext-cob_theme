@@ -1,10 +1,11 @@
 {% ckan_extends %}
 
   {% block resource_item_title %}
-  <a class="heading" href="{{ url }}" title="{{ h.scheming_language_text(res.name_translated) or res.name or res.description }}">
     {% if res.name_translated %}
+      <a class="heading" href="{{ url }}" title="{{ h.scheming_language_text(res.name_translated) }}">
       {{ h.scheming_language_text(res.name_translated) | truncate(75) }}<span class="format-label" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
     {% else %}
+      <a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
       {{ h.resource_display_name(res) | truncate(75) }}<span class="format-label" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
     {% endif %}
     {{ h.popular('views', res.tracking_summary.total, min=10) }}
@@ -43,7 +44,9 @@
   
   {% block resource_item_description %}
     <p class="description">
-      {% if res.description %}
+      {% if res.description_translated %}
+        {{ h.markdown_extract(h.scheming_language_text(res.description_translated), extract_length=100) }}
+      {% elif res.description %}
         {{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=100) }}
       {% endif %}
     </p>

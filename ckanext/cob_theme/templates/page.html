@@ -1,38 +1,72 @@
 {% ckan_extends %}
 
-{% block primary %}
-  <div class="primary span9 main-responsive-panel">
-    {#
-      The primary_content block can be used to add content to the page.
-      This is the main block that is likely to be used within a template.
+{%- block page -%}
+<input type="checkbox" id="hb__trigger" class="hb__trigger" aria-hidden="true">
+<div class="main-navigation">
+  <div class="main-navigation-title"></div>
+    <div class="region region-navigation">
+      <ul class="menu">
+        <li class="menu__item is-leaf first leaf secondary-menu-item">
+          <a href="/dataset" class="menu__link">Datasets</a>
+        </li>
+        <li class="menu__item is-leaf leaf secondary-menu-item">
+          <a href="/group" class="menu__link">Topics</a>
+        </li>
+        <li class="menu__item is-leaf leaf secondary-menu-item">
+          <a href="/organization" class="menu__link">Organizations</a>
+        </li>
+        <li class="menu__item is-leaf leaf secondary-menu-item">
+          <a href="/about" class="menu__link">About</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="page" id="page">
+  {% block skip %}
+    {{ super() }}
+  {% endblock %}
 
-      Example:
+  {%- block header %}
 
-      {% block primary_content %}
-         <h1>My page content</h1>
-         <p>Some content for the page</p>
-      {% endblock %}
-     #}
-     {% block primary_content %}
-         {{ super() }}
-     {% endblock %}
-   </div>
-{% endblock %}
-{% block secondary %}
-  <aside class="secondary span3 aside-fixed-panel">
-    {#
-    The secondary_content block can be used to add content to the
-    sidebar of the page. This is the main block that is likely to be
-    used within a template.
+    {% include "header.html" %}
+  {% endblock -%}
 
-    Example:
+  {%- block content %}
+    {% block maintag %}<div role="main">{% endblock %}
+      <div id="content" class="container">
+        {% block main_content %}
+          {% block flash %}
+            {{ super() }}
+          {% endblock %}
+          {% block toolbar %}
+            {{ super() }}
+          {% endblock %}
+          <div class="row wrapper{% block wrapper_class %}{% endblock %}{% if self.secondary()|trim == '' %} no-nav{% endif %}">
+            {% block pre_primary %}
+              {{ super() }}
+            {% endblock %}
+            {% block primary %}
+              <div class="primary span9 main-responsive-panel">
+                {% block primary_content %}
+                  {{ super() }}
+                {% endblock %}
+              </div>
+            {% endblock %}
+            {% block secondary %}
+              <aside class="secondary span3 aside-fixed-panel">
+                {% block secondary_content %}
+                  {{ super() }}
+                {% endblock %}
+              </aside>
+            {% endblock %}
+          </div>
+        {% endblock %}
+      </div>
+    </div>
+  {% endblock -%}
 
-      {% block secondary_content %}
-        <h2>A sidebar item</h2>
-        <p>Some content for the item</p>
-      {% endblock %}
-    #}
-    {% block secondary_content %}
-    {% endblock %}
-  </aside>
-{% endblock %}
+  {%- block footer %}
+    {% include "footer.html" %}
+  {% endblock -%}
+</div>
+{%- endblock -%}

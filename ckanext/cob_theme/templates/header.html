@@ -9,6 +9,14 @@
   {% endblock %}
   <div class="container">
     {# The .header-image class hides the main text and uses image replacement for the title #}
+    <label tabindex="0" for="hb__trigger" class="nav-trigger" type="button" aria-label="Menu" aria-controls="navigation" aria-expanded="false">
+        <div class="hb">
+            <span class="hb__box">
+                <span class="hb__inner"></span>
+            </span>
+            <span class="hb__label">Menu</span>
+        </div>
+    </label>
     <hgroup class="{{ g.header_class }} pull-left">
       {% block header_logo %}
         {% if g.site_logo %}
@@ -21,19 +29,6 @@
         {% endif %}
       {% endblock %}
     </hgroup>
-    {% block header_site_search %}
-    <section id="block-ckan-sitewide-search-bar">
-      <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-        <div class="field">
-          <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search Datasets') }}" />
-          <button class="btn-search" type="submit"><i class="icon-search"></i></button>
-        </div>
-      </form>
-    </section>
-    {% endblock %}
-  </div>
-
   <div class="navigation-wrapper">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
@@ -49,17 +44,15 @@
             <ul class="nav nav-pills">
               {% block header_site_navigation_tabs %}
                 {{ h.build_nav_main(
-                  ('search', _('Datasets')),
                   ('group_index', _('Topics')),
                   ('organizations_index', _('Organizations')),
                   ('about', _('About')),
-                  ('contact_form', _('Contact Us'))
                 ) }}
               {% endblock %}
             </ul>
           {% endblock %}
 
-          {% block header_account %}
+         {% block header_account %}
             {% block header_account_container_content %}
               {% if c.userobj %}
                 <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
@@ -81,6 +74,7 @@
                       {% set new_activities = h.new_activities() %}
                       <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
                         {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+
                         <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
                           <i class="icon-dashboard" aria-hidden="true"></i>
                           <span class="badge">{{ new_activities }}</span>
@@ -121,5 +115,19 @@
       </nav>
     </div>
   </div>
+
+    {# {% block header_site_search %}
+    <section id="block-ckan-sitewide-search-bar">
+      <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+        <div class="field">
+          <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
+          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search Datasets') }}" />
+          <button class="btn-search" type="submit"><i class="icon-search"></i></button>
+        </div>
+      </form>
+    </section>
+    {% endblock %}
+    #}
+   </div>   
 </header>
 {% endblock %}
