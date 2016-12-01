@@ -40,7 +40,7 @@
             <div class="strikethrough-wrapper">
               <h2 class="heading"><a href="/group">Topics</a></h2>
             </div>
-             {% for group in h.cob_theme_get_groups() %}
+             {% for group in h.cob_theme_get_groups(8) %}
               {% if group.package_count > 0 %}
                 <a href="/group/{{ group.name }}" class="browse-group">
                   <img class="browse-group-image" class="homepage-group-images" src="{{ group.image_display_url or '/base/images/placeholder-group.png' }}">

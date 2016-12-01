@@ -19,7 +19,7 @@ a {
 
 a.browse-group {
   background-color: #fff;
-  padding: 36px; }
+  padding: 1%; }
 
 a.tag:hover{
   -moz-box-shadow: inset 0 1px 0 #126c9c;
@@ -126,16 +126,6 @@ label, a {
   text-transform: uppercase;
   font-family: Montserrat, sans-serif; }
 
-.main-updates li.dataset-item {
-  background-color: #fff;
-  border: none;
-  display: block;
-  height: 190px;
-  padding: 0; }
-
-li.dataset-item .dataset-heading {
-  padding-top: 30px; }
-
 li.dataset-item .dataset-heading a {
   font-family: Lora, serif;
   text-transform: none;
@@ -144,6 +134,10 @@ li.dataset-item .dataset-heading a {
 
 table tbody tr:hover, table.group_additional tbody tr:hover {
   background: #FFFEEE; }
+
+th, .dataset-label{
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif; }
 
 thead {
   background-color: #f2f2f2; }
@@ -161,7 +155,7 @@ ul.menu{
   padding-top: 4px; }
 
 [role=main].hero {
-  background: url("/img/boston_background.jpg");
+  background: url("/img/Boston_Twilight_Panorama_3.jpg");
   background-color: transparent;
   background-size: cover; }
 
@@ -255,9 +249,6 @@ ul.menu{
   opacity: 1;
   text-decoration: none; }
 
-.browse-group:nth-child(7n+0) {
-  margin-right: 0; }
-
 .browse-group-image {
   margin: 12px;
   max-height: 100px;
@@ -271,8 +262,11 @@ ul.menu{
   font-size: 25px; }
 
 .browse-group-display-name {
-  color: #fff;
-  padding-top: 50px; }
+  color: rgb(40, 139, 228);
+  padding-top: 24px; }
+
+.browse-group:hover .browse-group-display-name{
+  color: #fff; }
 
 .browse-heading {
   margin-bottom: 28px; }
@@ -463,7 +457,7 @@ ul.menu{
   padding: 20px 20px 30px; }
 
 .filtered.pill {
-  background-color: #206b82; }
+  background-color: #288BE4; }
 
 .form-actions {
   text-align: right; }
@@ -596,7 +590,7 @@ ul.menu{
   zoom: 1; }
 
 .homepage .search-form .search-input.search-giant button {
-  right: 21%; }
+  right: 40px; }
 
 .landing-hero-intro-text .intro-text {
   color: #fff;
@@ -652,6 +646,20 @@ ul.menu{
 
 .main-updates {
   background: #f3f3f3; }
+
+.main-updates .heading{
+  border-bottom: 5px solid #091f2f;
+  margin-bottom: 50px; }
+
+.main-updates li.dataset-item {
+  background-color: #fff;
+  border: none;
+  display: block;
+  height: 190px;
+  padding: 0; }
+
+.main-updates li.dataset-item .dataset-heading {
+  padding-top: 30px; }
 
 .masonry-brick .count {
   font-weight: normal; }
@@ -745,6 +753,8 @@ ul.menu{
 .media-item:hover {
   background-color: #288BE4; }
 .media-item:hover .media-heading{
+  color: #fff; }
+.media-item:hover .count {
   color: #fff; }
 
 .media-item.masonry-brick {
@@ -890,6 +900,9 @@ ul.menu{
 .navbar .nav>li>a {
   padding: 17px; }
 
+header .navbar .nav>li>a {
+  padding: 17px 8px; }
+
 .navbar .nav>li>.dropdown-menu:before {
   display:none; }
 .navbar .nav>li>.dropdown-menu:after {
@@ -1033,7 +1046,8 @@ ul.menu{
   line-height: 1.66667rem; }
 
 .thumb-wrapper.float-left {
-  background-image: url(https://www.boston.gov/sites/all/themes/custom/boston_public/src/img/news-default-thumb.svg);
+  background-image: url(/img/dataset_background.svg);
+  background-size: cover;
   float: left;
   margin-top: 0;
   margin-right: 20px;
@@ -1081,6 +1095,12 @@ ul.menu{
   #member-table {
     table-layout: auto;
   }
+  a.browse-group {
+    width: 190px;
+  }
+  .main-updates .span6{
+    width: 100%;
+  }
   .primary aside.tertiary {
     margin-left: 0;
     width: 100%;
@@ -1091,6 +1111,9 @@ ul.menu{
 }
 
 @media (max-width: 979px) {
+  a.browse-group {
+    width: 29%;
+  }
   .masthead .site-search {
     display: inline;
   }
@@ -1106,6 +1129,12 @@ ul.menu{
   }
   .navbar {
     margin-bottom: 0;
+  }
+  .resource-item .btn-group {
+    display: block;
+    position: relative;
+    top: 0px;
+    right: 0px;
   }
 }
 
@@ -1138,9 +1167,6 @@ ul.menu{
   }
   [role=main] .primary {
     float: none;
-  }
-  a.browse-group {
-    width: 31%;
   }
   .masthead .btn-navbar,
   .masthead .btn-navbar:hover, .masthead .btn-navbar:focus, .masthead .btn-navbar:active,
@@ -1179,7 +1205,7 @@ ul.menu{
 
 @media (max-width: 639px) {
   a.browse-group {
-    width: 46%;
+    width: 44%;
   }
   ul, ol {
     margin: 0;
@@ -1187,8 +1213,14 @@ ul.menu{
   .module-content.search-form input {
     width: 90%
   }
+  .resource-item .btn-group {
+    display: none;
+  }
   .search-form .search-input.search-giant button {
     right: 8.5%
+  }
+  .thumb-wrapper.float-left {
+    width: 10px;
   }
 }
 
@@ -1326,8 +1358,8 @@ ul.menu{
     width: 240px;
   }
 
-  .browse-group {
-    width: 15%;
+  a.browse-group {
+    width: 21.6%;
   }
   .control-medium input, .control-medium select, .control-medium textarea {
     width: 100%;
@@ -1393,7 +1425,7 @@ ul.menu{
     width:31.3%;
   }
   .span3 {
-    width: 23.4.%;
+    width: 23.4%;
   }
   .span2 {
     width: 14.476723040552828%;
@@ -1724,6 +1756,12 @@ ul.menu{
   }
 }
 
+@media screen and (min-width: 620px) {
+  .homepage .search-form .search-input.search-giant button {
+     right: 21%; 
+   }
+}
+
 /*change the color contrast for 508 compliance*/
 .label[data-format=csv], .label[data-format*=csv] {
   background-color: #866b00;
@@ -1894,7 +1932,7 @@ label.nav-trigger:after {
   content: "";
 }
 .main-navigation .main-navigation-title {
-  background: url(https://www.boston.gov//sites/all/themes/custom/boston_public/dist/img/b-logo-dark.svg) no-repeat center #fff;
+  background: url(/img/b-logo-dark.svg) no-repeat center #fff;
   background-size: 54px 83px;
   margin: 0;
   padding: 100px;
@@ -1926,4 +1964,27 @@ label.nav-trigger:after {
 }
 .main-navigation a:hover {
   background-color: #175182;
+}
+
+/*side nav style*/
+.side-nav-account .account{
+  height: auto;
+}
+.side-nav-account .account ul {
+  height: auto;
+}
+.side-nav-account .account li {
+  height: auto;
+  display: block;
+}
+.side-nav-account .account.avatar.authed ul a, .side-nav-account .account.not-authed ul a {
+  padding: 0px 15px;
+}
+.side-nav-account .account.avatar.authed ul a:hover, .side-nav-account .account.not-authed li.active a, .account ul a:hover {
+  background-color: #175182;
+}
+@media (min-width: 980px) {
+  .side-nav-account{
+    display: none;
+  }
 }

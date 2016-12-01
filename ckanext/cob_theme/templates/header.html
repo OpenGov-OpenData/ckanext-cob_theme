@@ -32,21 +32,13 @@
   <div class="navigation-wrapper">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
         <div class="nav-collapse collapse">
           {% block header_site_navigation %}
             <ul class="nav nav-pills">
               {% block header_site_navigation_tabs %}
                 {{ h.build_nav_main(
-                  ('group_index', _('Topics')),
-                  ('organizations_index', _('Organizations')),
-                  ('about', _('About')),
+                  ('search', _('Datasets')),
+                  ('organizations_index', _('Organizations'))
                 ) }}
               {% endblock %}
             </ul>

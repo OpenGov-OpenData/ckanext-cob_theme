@@ -73,7 +73,6 @@ def abbr_name(name):
 class Cob_ThemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
-    plugins.implements(plugins.IRoutes, inherit=True)
     
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
@@ -91,9 +90,3 @@ class Cob_ThemePlugin(plugins.SingletonPlugin):
                 'cob_theme_get_package_metadata': get_package_metadata,
                 'cob_theme_is_facet_active':is_facet_active,
                 'cob_theme_abbr_name': abbr_name,}
-
-    def before_map(self, map):
-        map.connect('/user/logged_in',
-                    controller='ckanext.cob_theme.controller:CustomUserController',
-                    action='logged_in')
-        return map
