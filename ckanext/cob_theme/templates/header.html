@@ -29,6 +29,9 @@
         {% endif %}
       {% endblock %}
     </hgroup>
+    <a href="https://www.boston.gov/" title="boston-site" rel="boston-site" target="_blank" class="s">
+        <img src="https://cob-patterns-herokuapp-com.global.ssl.fastly.net/images/public/seal.svg" alt="City of Boston Seal" class="s-i" data-pin-nopin="true">
+      </a>
   <div class="navigation-wrapper">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
@@ -95,7 +98,7 @@
                     {% block header_account_notlogged %}
                       <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
                       {% if h.check_access('user_create') %}
-                        <li>{% link_for _('Sign Up'), controller='user', action='register', class_='sub' %}</li>
+                        <li>{% link_for _('Sign up'), controller='user', action='register', class_='sub' %}</li>
                       {% endif %}
                     {% endblock %}
                   </ul>
