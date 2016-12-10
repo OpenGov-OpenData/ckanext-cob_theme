@@ -6,6 +6,12 @@
   <div class="main-navigation-title"></div>
     <div class="region region-navigation">
       <ul class="menu">
+      <li class="menu__item is-leaf first leaf secondary-menu-item">
+        <a href="{{ h.url_for('') }}" class="menu__link">{{ _('Home') }}</a>
+      </li>
+      <li class="menu__item is-leaf first leaf secondary-menu-item">
+        <a href="https://www.boston.gov/" class="menu__link" target="_blank">{{ _('Boston Site') }}</a>
+      </li>
       <div class="side-nav-account">
         {% block header_account %}
           {% block header_account_container_content %}
@@ -16,14 +22,12 @@
                     {% if c.userobj.sysadmin %}
                       <li>
                         <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
-                          <i class="icon-legal" aria-hidden="true"></i>
                           <span class="text">{{ _('Admin') }}</span>
                         </a>
                       </li>
                     {% endif %}
                     <li>
                       <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                        {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
                         <span class="username">{{ c.userobj.display_name }}</span>
                       </a>
                     </li>
@@ -31,16 +35,13 @@
                     <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
                       {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
                       <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
-                        <i class="icon-dashboard" aria-hidden="true"></i>
                         <span class="text">{{ _('Dashboard') }}</span>
-                        <span class="badge">{{ new_activities }}</span>
                       </a>
                     </li>
 
                     {% block header_account_settings_link %}
                       <li>
                         <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                          <i class="icon-cog" aria-hidden="true"></i>
                           <span class="text">{{ _('Settings') }}</span>
                         </a>
                       </li>
@@ -48,7 +49,6 @@
                     {% block header_account_log_out_link %}
                       <li>
                         <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-                          <i class="icon-signout" aria-hidden="true"></i>
                           <span class="text">{{ _('Log out') }}</span>
                         </a>
                       </li>
@@ -95,7 +95,7 @@
 </div>
 <div class="page" id="page">
   {% block skip %}
-    {{ super() }}
+    <div class="hide skip-link"><a href="#content">{{ _('Skip to content') }}</a></div>
   {% endblock %}
 
   {%- block header %}
