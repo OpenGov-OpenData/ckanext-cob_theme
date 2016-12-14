@@ -11,7 +11,7 @@
           <div class="landing-hero-intro-text">
             <div class="intro-text supporting-text">welcome to</div>
           </div>
-          <h1 class="hero-text-heading heading">BOSTON OPEN DATA</h1>
+          <h1 class="hero-text-heading heading">{{title}}</h1>
           <div class="hero-text-description secondary-heading">
           {% if intro %}
             {{ h.render_markdown(intro) }}
@@ -31,6 +31,20 @@
   </div>
 </div>
 <div>
+  {% if h.cob_theme_get_showcases() %}
+  <div class="main-featured">
+    <div class="container">
+      <div class="row">
+        <div class="span12 col1 showcase-container">
+          <div class="module-content box">
+            <h2 class="heading"><a href="/showcase">Showcases</a></h2>
+            {% snippet 'home/snippets/showcase_list.html', showcases=h.cob_theme_get_showcases() %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
   {% if h.cob_theme_get_groups() %}
   <div class="main-browse">
     <div class="container">

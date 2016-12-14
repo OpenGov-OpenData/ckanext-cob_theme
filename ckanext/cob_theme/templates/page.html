@@ -10,8 +10,9 @@
         <a href="{{ h.url_for('') }}" class="menu__link">{{ _('Home') }}</a>
       </li>
       <li class="menu__item is-leaf first leaf secondary-menu-item">
-        <a href="https://www.boston.gov/" class="menu__link" target="_blank">{{ _('Boston Site') }}</a>
+        <a href="https://www.boston.gov/" class="menu__link" target="_blank">{{ _('Boston.gov') }}</a>
       </li>
+
       <div class="side-nav-account">
         {% block header_account %}
           {% block header_account_container_content %}
@@ -71,7 +72,10 @@
             {% endif %}
           {% endblock %}
         {% endblock %}
-      </div>
+    </div>
+      <li class="menu__item is-leaf first leaf secondary-menu-item">
+        <a href="/showcase" class="menu__link">{{ _('Showcases') }}</a>
+      </li>
       <li class="menu__item is-leaf first leaf secondary-menu-item">
         <a href="{{ h.url_for('search') }}" class="menu__link">{{ _('Datasets') }}</a>
       </li>

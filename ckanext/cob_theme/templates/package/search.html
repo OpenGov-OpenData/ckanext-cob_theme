@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block secondary_content %}
+  {% snippet "spatial/snippets/spatial_query.html", default_extent="{ \"type\":
+    \"Polygon\", \"coordinates\": [[[-71.191113,42.22788],[-71.191113,42.4008199],[-70.749455,42.4008199],[-70.749455,42.22788],[-71.191113,42.22788]]]}"  %}
+  {{super()}}
+{% endblock %}
