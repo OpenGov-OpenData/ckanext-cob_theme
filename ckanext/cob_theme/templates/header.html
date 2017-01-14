@@ -41,8 +41,10 @@
               {% block header_site_navigation_tabs %}
                 {{ h.build_nav_main(
                   ('search', _('Datasets')),
-                  ('organizations_index', _('Organizations'))
                 ) }}
+                <li>
+                  <a href=" https://www.boston.gov/innovation-and-technology/open-data-open-knowledge" title="news" target="_blank">News</a>
+                </li>
               {% endblock %}
             </ul>
           {% endblock %}

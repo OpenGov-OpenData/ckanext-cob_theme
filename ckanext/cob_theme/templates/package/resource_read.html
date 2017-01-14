@@ -48,10 +48,8 @@
 {% if res.url and h.is_url(res.url) %}
   <li>
     <a class="btn btn-primary resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}">
-      {% if res.resource_type in ('listing', 'service') %}
+      {% if not h.cob_theme_is_resource_data_format_downloadable(res.format) %}
         <i class="icon-eye-open"></i> {{ _('View') }}
-      {% elif  res.resource_type == 'api' %}
-        <i class="icon-key"></i> {{ _('API Endpoint') }}
       {% else %}
         <i class="icon-download"></i> {{ _('Download') }}
       {% endif %}
@@ -70,7 +68,7 @@
       <div class="module-content">
         <h2>{{ _('Additional Information') }}</h2>
         <table class="table table-striped table-bordered table-condensed" data-module="table-toggle-more" summary="metadata about the resource">
-         {# <thead>
+         {#<thead>
             <tr>
               <th scope="col">{{ _('Field') }}</th>
               <th scope="col">{{ _('Value') }}</th>

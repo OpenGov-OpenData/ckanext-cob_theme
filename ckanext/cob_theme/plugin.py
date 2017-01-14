@@ -61,6 +61,7 @@ def is_facet_active(name):
             return True
     return False
 
+
 def abbr_name(name):
     """Returns an abbreviation"""
     name_snippets = name.split()
@@ -70,9 +71,18 @@ def abbr_name(name):
     return res
 
 
+def is_resource_data_format_downloadable(resourceDataFormat):
+    """Return if a resource is downloadable or not"""
+    if isinstance(resourceDataFormat, basestring):
+        if resourceDataFormat.upper() in ["ESRI REST", "HTML", ""]:
+            return False
+    return True
+
+
 class Cob_ThemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IFacets)
     
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
@@ -89,4 +99,23 @@ class Cob_ThemePlugin(plugins.SingletonPlugin):
                 'cob_theme_get_showcases': showcases,
                 'cob_theme_get_package_metadata': get_package_metadata,
                 'cob_theme_is_facet_active':is_facet_active,
-                'cob_theme_abbr_name': abbr_name,}
+                'cob_theme_abbr_name': abbr_name,
+                'cob_theme_is_resource_data_format_downloadable': is_resource_data_format_downloadable,
+               }
+
+    def dataset_facets(self, facets_dict, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def _update_facets(self, facets_dict):
+        facets_dict.update({
+            'provider': plugins.toolkit._('Provider'),
+        })

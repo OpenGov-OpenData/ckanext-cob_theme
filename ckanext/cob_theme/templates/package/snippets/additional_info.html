@@ -6,7 +6,7 @@
         <th scope="col">{{ _('Field') }}</th>
         <th scope="col">{{ _('Value') }}</th>
       </tr>
-    </thead> #}
+    </thead>#}
     <tbody>
       {% block package_additional_info %}
         {% if pkg_dict.url %}
@@ -74,7 +74,6 @@
             </td>
           </tr>
         {% endif %}
-
       {% block extras scoped %}
         {% for extra in h.sorted_extras(pkg_dict.extras) %}
           {% set key, value = extra %}
@@ -84,8 +83,11 @@
           </tr>
         {% endfor %}
       {% endblock %}
-
       {% endblock %}
+         <tr>
+           <th scope="row" class="dataset-label">{{ _("License") }}</th>
+           <td class="dataset-details" property="rdf:value">{{ pkg_dict.license_title }}</td>
+         </tr>
     </tbody>
   </table>
 </section>

@@ -23,6 +23,11 @@ Example:
     {% block content %}
       <div class="dataset-content">
         <div class="thumb-wrapper float-left">
+           {% if package.icon_url %}
+             <img style="max-width:170px; float:left;" src="{{package.icon_url}}">
+           {% else %}
+             <img style="max-width:170px; float:left;" src="/img/default_icon_for_dataset.png">
+           {% endif %}
          </div>
        
         {% block heading %}

@@ -2,15 +2,15 @@
 
     {% block footer_content %}
     <div class="row">
-      <div class="span8 col1 footer-links" style="padding-bottom:12px;">
+      <div class="span5 col1 footer-links group-1">
         {% block footer_nav %}
-          <ul class="unstyled">
-	     <li><a href="https://www.boston.gov/departments/mayors-office/martin-j-walsh" target="_blank" title="Martin J. Walsh, a lifelong advocate for working people and a proud product of the City of Boston, was sworn in as the City’s 54th mayor on January 6, 2014.">Mayor Martin J. Walsh</a></li>
-	  </ul>	
           <ul class="unstyled">
             {% block footer_links %}
               <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
             {% endblock %}
+          </ul>
+          <ul class="unstyled">
+            <li><a href="https://www.boston.gov/departments/mayors-office/martin-j-walsh" target="_blank" title="Martin J. Walsh, a lifelong advocate for working people and a proud product of the City of Boston, was sworn in as the City’s 54th mayor on January 6, 2014.">Mayor Martin J. Walsh</a></li>
           </ul>
           <ul class="unstyled">
             {% block footer_links_ckan %}
@@ -18,12 +18,31 @@
               <li><a target="_blank" href="{{ api_url }}">{{ _('API Documentation') }}</a></li>
               {% endblock %}
           </ul>
-          <ul class="unstyled"">
-            <li><a href="http://www.cityofboston.gov/copyright/privacyandsecurity.asp" target="_blank" title="" class="menu__link">Privacy Policy</a></li>
+          <ul class="unstyled">
+            <li><a href="https://www.boston.gov/departments/analytics-team" target="_blank">{{_('Analytics Team')}}</a></li>
           </ul>
         {% endblock %}
       </div>
-      <div class="span4 col2 attribution">
+      <div class="footer-links group-2">
+          </ul>
+          <ul class="unstyled">
+            <li><a href="http://www.cityofboston.gov/copyright/privacyandsecurity.asp" target="_blank" title="" class="menu__link">Privacy Policy</a></li>
+          </ul>
+          <ul class="unstyled">
+            <li><a href="http://boston.ogopendata.com/pages/glossary">{{_('Glossary')}}</a></li>
+          </ul>
+          <ul class="unstyled">
+            <li><a href="https://www.boston.gov/departments/innovation-and-technology" target="_blank">{{_('DoIT')}}</a></li>
+          </ul>
+          <ul class="unstyled"">
+            <li><a href="http://boston.ogopendata.com/pages/frequently-asked-questions">{{ _('FAQ') }}</a></li>
+          </ul>
+          <ul class="unstyled"">
+            <li><a href="{{ h.url_for('/contact') }}">{{ _('Contact') }}</a></li>
+          </ul>
+      </div>	
+
+      <div class="attribution">
         {% block footer_attribution %}
           <p>
             {% trans %}

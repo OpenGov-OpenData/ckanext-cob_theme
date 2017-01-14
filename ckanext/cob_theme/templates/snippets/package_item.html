@@ -1,0 +1,36 @@
+{% ckan_extends %}
+
+{% block package_item %}
+  <li class="{{ item_class or "dataset-item" }}">
+    {% if package.icon_url %}
+      <img class="dataset-list-left-icon" src="{{package.icon_url}}">
+    {% else %}
+      <img class="dataset-list-left-icon" src="/img/default_icon_for_dataset.png">
+    {% endif %}
+    {% block content %}
+      <div class="dataset-content">
+        {% block heading %}
+          {{ super() }}
+        {% endblock %}
+        {% block banner %}
+          {% if banner %}
+            <span class="banner">{{ _('Popular') }}</span>
+          {% endif %}
+        {% endblock %}
+        {% block notes %}
+          {% if notes %}
+            <div class="package-item-note">{{ notes|urlize }}</div>
+          {% else %}
+            <p class="empty">{{ _("This dataset has no description") }}</p>
+          {% endif %}
+          {% if package.metadata_modified %}
+            <div class="package-item-date">Updated on {{h.render_datetime(package.metadata_modified)}}</div>
+          {% endif %}
+        {% endblock %}
+      </div>
+      {% block resources %}
+        {{ super() }}
+      {% endblock %}
+    {% endblock %}
+  </li>
+{% endblock %}

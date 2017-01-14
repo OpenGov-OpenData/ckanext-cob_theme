@@ -15,9 +15,8 @@
           <div class="hero-text-description secondary-heading">
           {% if intro %}
             {{ h.render_markdown(intro) }}
-          {% else %}
-            Get started by searching from <b>{{ h.cob_theme_dataset_count() }}</b> datasets
           {% endif %}
+            Get started by searching from <b>{{ h.cob_theme_dataset_count() }}</b> datasets
           </div>
         </div>
       </div>
@@ -38,6 +37,7 @@
         <div class="span12 col1 showcase-container">
           <div class="module-content box">
             <h2 class="heading"><a href="/showcase">Showcases</a></h2>
+            <span class="heading-explanation">See what our users are doing with open data.</span>		
             {% snippet 'home/snippets/showcase_list.html', showcases=h.cob_theme_get_showcases() %}
           </div>
         </div>
@@ -53,6 +53,7 @@
           <div class="module-content box">
             <div class="strikethrough-wrapper">
               <h2 class="heading"><a href="/group">Topics</a></h2>
+              <span class="heading-explanation">Browse datasets through different topics.</span>
             </div>
              {% for group in h.cob_theme_get_groups(8) %}
               {% if group.package_count > 0 %}

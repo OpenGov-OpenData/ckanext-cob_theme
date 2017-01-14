@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block save_text %}
+  {%- if action == "edit" -%}
+    {{ _('Update Topic') }}
+  {%- else -%}
+    {{ _('Create Topic') }}
+  {%- endif -%}
+{% endblock %}

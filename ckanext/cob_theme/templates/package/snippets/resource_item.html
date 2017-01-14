@@ -37,8 +37,11 @@
           </a>
           {% if res.url and h.is_url(res.url) %}
             <a href="{{ res.url }}" class="btn btn-primary" target="_blank">
-              <i class="icon-download"></i>
-              {{ _('Download') }}
+              {% if not h.cob_theme_is_resource_data_format_downloadable(res.format) %}
+                <i class="icon-external-link"></i>{{ _('Go to resource') }}
+              {% else %}
+                <i class="icon-download"></i> {{ _('Download') }}
+              {% endif %}
             </a>
           {% endif %}
         {% endblock %}
