@@ -525,6 +525,7 @@ ul.menu{
   color: #ffffff; }
 
 .hero-text-description.secondary-heading {
+  line-height: 1.35em;
   -webkit-font-smoothing: antialiased;
   color: #fff;
   font-family: "Lora",serif;
@@ -634,14 +635,12 @@ display:none;
   display: none; }
 
 .main-search {
-  padding-top: 0; }
+  padding-top: 0; 
+}
 
 .main-updates {
-  background: #f3f3f3; }
-
-.main-updates .heading{
-  border-bottom: 5px solid #091f2f;
-  margin-bottom: 50px; }
+  background: #f3f3f3; 
+}
 
 .main-updates li.dataset-item {
   background-color: #fff;
@@ -786,7 +785,7 @@ display:none;
 .media-item.organization-item-list {
   border: 1px solid #e3e3e3;
   padding: 14px;
-  text-align: left; 
+  text-align: center; 
 }
 .media-item.organization-item-list .media-image{
   width:126px;
@@ -1022,9 +1021,9 @@ header .navbar .nav>li>a {
   color: #091f2f;
   font-size: 30px; }
 
-.showcase-container .heading {
+.showcase-container .heading, .main-browse .heading, .main-updates .heading{
   border-bottom: 5px solid #091f2f;
-  margin-bottom: 50px; }
+}
 
 .simple-input .field .btn-search {
   color: #555555;
@@ -1267,6 +1266,18 @@ header .navbar .nav>li>a {
 }
 
 @media (max-width: 639px) {
+   #recent-list .thumb-wrapper.float-left{
+    width:0px;
+  }
+  #recent-list .thumb-wrapper img{
+    display:none;
+  }
+  .dataset-list-left-icon{
+    display:none;
+  }
+  .page_primary_action .dataset-list .dataset-item .dataset-resources, .main-responsive-panel .dataset-list .dataset-item .dataset-resources, .main-responsive-panel .dataset-list .dataset-item .package-item-note, .main-responsive-panel .dataset-list .dataset-item .package-item-date {
+    padding-left: 0px;
+  }
   a.browse-group {
     width: 44%;
   }
@@ -2149,7 +2160,10 @@ label.nav-trigger:after {
 .module-content:first-child {
   padding-top: 0px;
 }
-
+.hero .module-content.box {
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .toolbar .breadcrumb .active a,
 .toolbar .breadcrumb a.active {
   font-weight: normal;
@@ -2192,10 +2206,6 @@ label.nav-trigger:after {
   border: 5px solid #091f2f;
 }
 
-.main-browse .heading {
-  border-bottom: 5px solid #091f2f;
-  margin-bottom: 50px;
-}
 .main-updates .heading {
   font-size: 30px;
 }
@@ -2612,4 +2622,98 @@ section.tags h3{
 }
 .dataset-list-left-icon{
   max-width:120px; float:left;
+}
+
+#field-order-by-stylable a, .dropdown a:visited {
+  color: #091f2f;
+  text-decoration: none;
+  outline: none;
+}
+
+#field-order-by-stylable dt a {
+  display: block;
+  padding-right: 20px;
+  border: 1px solid #091f2f;
+  width: 160px;
+  padding: 5px;
+}
+
+dt .value:after{
+content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  float: right;
+  margin-top: 8px;
+}
+
+#field-order-by-stylable span span.value{
+  display: none;
+}
+
+#field-order-by-stylable dd .value{
+  display: none;
+}
+
+#field-order-by-stylable dd li{
+  list-style:none;
+  padding: 5px;
+}
+#field-order-by-stylable dd{
+  margin-left: 0px;
+  position: absolute;
+  background-color: white;
+}
+
+#field-order-by-stylable dd ul {
+  border: 1px solid #091f2f;
+  color: #091f2f;
+  width: auto;
+  display: none;
+  min-width: 170px;
+  list-style: none;
+}
+
+#field-order-by-stylable ul, ol {
+  padding: 0;
+  margin: 0px;
+}
+
+#field-order-by-stylable span, 
+#field-order-by-stylable a{
+  text-transform : none;
+  font-family: lora;
+  font-weight: normal;
+
+}
+
+#field-order-by{
+  display: none;
+}
+
+#field-order-by-stylable{
+  display:inline-block;
+}
+
+.form-select.control-group.control-order-by{
+  background-color:white;
+}
+
+#field-order-by-stylable dl{
+  display:inline-block;
+  height: 20px;
+}
+
+#field-order-by-stylable li:hover{
+   background-color: #091f2f;
+}
+
+#field-order-by-stylable li:hover a{
+   color: #ffffff;
 }

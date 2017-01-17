@@ -1,0 +1,8 @@
+{% ckan_extends %}
+  {% block organization_list_inner %}
+    {% for organization in organizations %}
+      {% if organization.package_count or h.check_access('sysadmin') %}
+        {% snippet "organization/snippets/organization_item.html", organization=organization, position=loop.index, show_capacity=show_capacity %} 
+      {% endif %}
+    {% endfor %}
+  {% endblock %}

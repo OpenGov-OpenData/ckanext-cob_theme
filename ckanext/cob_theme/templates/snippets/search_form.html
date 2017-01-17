@@ -11,3 +11,37 @@
       {% endblock %}
     </div>
   {% endblock %}
+
+{% block search_sortby %}
+    {% if sorting %}
+
+      <div class="form-select control-group control-order-by">
+        <label for="field-order-by">{{ _('Order by') }}</label>
+        <select id="field-order-by" name="sort">
+          {% for label, value in sorting %}
+            {% if label and value %}
+              <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+         <dl id="field-order-by-stylable">
+            <dt><a ><span class="value"></span></a></dt>
+          <dd>
+            <ul>
+              {% for label, value in sorting %}
+                {% if label and value %}
+                  <li>
+                    <a {% if sorting_selected == value %} selected="selected" {% endif %}>{{ label }}<span class="value">{{ value }}</span></a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+           </dd>
+         </dl>
+
+        {% block search_sortby_button %}
+        <button class="btn js-hide" type="submit">{{ _('Go') }}</button>
+        {% endblock %}
+      </div>
+    {% endif %}
+  {% endblock %}
