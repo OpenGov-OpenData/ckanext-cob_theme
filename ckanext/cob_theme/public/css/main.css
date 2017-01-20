@@ -2607,6 +2607,9 @@ section.tags h3{
 #dataset-edit .stages{
   margin: 0px;
 }
+.stages{
+  margin: 0px 0px 20px;
+}
 
 #dataset-edit .control-group.control-medium{
   margin-top:20px;
@@ -2711,9 +2714,37 @@ content: "";
 }
 
 #field-order-by-stylable li:hover{
-   background-color: #091f2f;
+  background-color: #091f2f;
 }
 
 #field-order-by-stylable li:hover a{
-   color: #ffffff;
+  color: #ffffff;
+}
+
+.modal{
+  margin: 0px;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+}
+
+.modal-body {
+  max-height: 80%;
+}
+
+.media-item.masonry-brick div{
+  overflow-y: hidden;
+  display: -webkit-box;
+  max-height: 80px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+ul.media-grid.masonry{
+  margin-left: 0px;
+}
+
+.module-content.page-header{
+  border-bottom:none;
 }

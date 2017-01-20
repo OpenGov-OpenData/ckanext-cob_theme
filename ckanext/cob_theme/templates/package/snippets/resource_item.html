@@ -43,6 +43,10 @@
                 <i class="icon-download"></i> {{ _('Download') }}
               {% endif %}
             </a>
+          {% elif res.url_type == 'datastore' %}
+            <a class="btn btn-primary" href="{{ res.url }}" target="_blank">
+              <i class="icon-download"></i> {{ _('Download') }}
+            </a>
           {% endif %}
         {% endblock %}
       </div>

@@ -53,7 +53,9 @@
           <div class="module-content box">
             <div class="strikethrough-wrapper">
               <h2 class="heading"><a href="/group">Topics</a></h2>
-              <span class="heading-explanation">As data are published it is tagged with a category so you can learn about popular topics. Explore them below. </span>
+              <span class="heading-explanation">
+                As datasets are published, they are tagged with categories so you can learn about popular topics. Explore them below.
+              </span>
             </div>
              {% for group in h.cob_theme_get_groups(8) %}
               {% if group.package_count > 0 %}

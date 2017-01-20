@@ -55,6 +55,12 @@
       {% endif %}
     </a>
   </li>
+{% elif res.url_type == 'datastore' %}
+  <li>
+    <a class="btn btn-primary resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}">
+      <i class="icon-download"></i> {{ _('Download') }}
+    </a>
+  </li>
 {% endif %}
 {% if 'datastore' in g.plugins %}
   <li>{% snippet 'package/snippets/data_api_button.html', resource=res, datastore_root_url=c.datastore_api %}</li>
