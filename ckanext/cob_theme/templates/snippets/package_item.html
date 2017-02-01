@@ -24,7 +24,11 @@
             <p class="empty">{{ _("This dataset has no description") }}</p>
           {% endif %}
           {% if package.metadata_modified %}
-            <div class="package-item-date">Updated on {{h.render_datetime(package.metadata_modified)}}</div>
+            <div class="package-item-extra">Updated on {{h.render_datetime(package.metadata_modified)}}</div>
+          {% endif %}
+          {% set curr_package = h.cob_theme_get_package_metadata(package) %}
+          {% if curr_package.tracking_summary.total > 1 %}
+            <div class="package-item-extra">{{curr_package.tracking_summary.total}} views</div>
           {% endif %}
         {% endblock %}
       </div>
