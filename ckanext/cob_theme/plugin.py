@@ -116,6 +116,7 @@ class Cob_ThemePlugin(plugins.SingletonPlugin):
         return facets_dict
 
     def _update_facets(self, facets_dict):
-        facets_dict.update({
-            'provider': plugins.toolkit._('Provider'),
-        })
+        #facets_dict.update({
+        #    'provider': plugins.toolkit._('Provider'),
+        #})
+        pass

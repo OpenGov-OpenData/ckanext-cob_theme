@@ -1049,7 +1049,7 @@ header .navbar .nav>li>a {
 
 .site-footer .container .row {
   padding: 20px;
- }
+}
 
 .site-search.simple-input {
   border: 1px solid rgb(205,205,205);
@@ -1195,20 +1195,18 @@ header .navbar .nav>li>a {
     padding-left: 20px;
     padding-right: 20px;
   }
-  #footer-attribution-text{
-    padding-left: 20px;
-  }
   body {
     padding-left: 0px;
     padding-right: 0px;
   }
-  footer {
-    padding-left: 20px;
-    padding-right: 20px;
+  footer.site-footer {
+    background-position: 90% 280px;
+    padding: 40px 20px;
   }
   .site-footer .container .row {
     padding: 0px;
     margin-left: -10px;
+    padding-left: 20px;
   }
   [role=main] .primary {
     float: none;
@@ -1244,9 +1242,6 @@ header .navbar .nav>li>a {
   }
   .section.site-search.simple-input {
     margin-bottom: 24px;
-  }
-  .site-footer, .site-footer a, .site-footer label, .site-footer small {
-    padding-left: 20px;
   }
   .toolbar .breadcrumb, .toolbar .breadcrumb a {
     color: #000;
@@ -2318,8 +2313,8 @@ footer.site-footer{
   background: url(/img/b-logo-light.svg) no-repeat 1.75em center #091f2f;
   padding: 1.75em 0 1.75em 6em;
   color: #fff;
-  background-size: auto 90px;
-  background-position-y: 50px;
+  background-size: 54px 90px;
+  background-position-y: 48px;
 }
 
 footer.site-footer .container{
@@ -2641,7 +2636,6 @@ section.tags h3{
   text-decoration: none;
   outline: none;
 }
-
 #field-order-by-stylable dt a {
   display: block;
   padding-right: 20px;
@@ -2668,11 +2662,9 @@ content: "";
 #field-order-by-stylable span span.value{
   display: none;
 }
-
 #field-order-by-stylable dd .value{
   display: none;
 }
-
 #field-order-by-stylable dd li{
   list-style:none;
   padding: 5px;
@@ -2682,7 +2674,6 @@ content: "";
   position: absolute;
   background-color: white;
 }
-
 #field-order-by-stylable dd ul {
   border: 1px solid #091f2f;
   color: #091f2f;
@@ -2691,12 +2682,10 @@ content: "";
   min-width: 170px;
   list-style: none;
 }
-
 #field-order-by-stylable ul, ol {
   padding: 0;
   margin: 0px;
 }
-
 #field-order-by-stylable span, 
 #field-order-by-stylable a{
   text-transform : none;
@@ -2704,28 +2693,22 @@ content: "";
   font-weight: normal;
 
 }
-
 #field-order-by{
   display: none;
 }
-
 #field-order-by-stylable{
   display:inline-block;
 }
-
 .form-select.control-group.control-order-by{
   background-color:white;
 }
-
 #field-order-by-stylable dl{
   display:inline-block;
   height: 20px;
 }
-
 #field-order-by-stylable li:hover{
   background-color: #091f2f;
 }
-
 #field-order-by-stylable li:hover a{
   color: #ffffff;
 }
@@ -2736,7 +2719,6 @@ content: "";
   height: 80%;
   width: 80%;
 }
-
 .modal-body {
   max-height: 80%;
 }
@@ -2763,4 +2745,10 @@ ul.media-grid.masonry{
 .dataset-details a, .nav-item a, .tags a {
   text-transform: none;
   font-family: Lora, serif;
+}
+@media (max-width: 767px) {
+  footer.site-footer {
+  background-position: 90% 280px;
+  padding: 40px 20px;
+  }
 }

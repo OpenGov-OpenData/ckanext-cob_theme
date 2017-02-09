@@ -55,7 +55,7 @@ Example:
         {% endblock %}
         {% block notes %}
           {% if package.metadata_modified %}
-            <div>Updated on {{h.render_datetime(package.metadata_modified)}}</div>
+            <div>Modified on {{h.render_datetime(package.metadata_modified)}}</div>
           {% endif %}
         {% endblock %}
         {% block resources %}
@@ -69,13 +69,15 @@ Example:
                     </li>
                   {% endfor %}
                 {% endblock %}
+{#
     {% block discourse_comments_count %}
-       {% set discourse_title = [title, " - Datasets -"] %}
-       {% set title_search =  discourse_title|join %}
-       {% if h.discourse_comments_count(title_search) > 0 %}
-       <li><a href="{{ h.url_for(controller='package', action='read', id=package.name) }}#discourse-comments" class="label" data-format="comment"><img src="/img/noun-comment-white.png">{{ h.discourse_comments_count(title_search) }}</a></li>
-       {% endif %}
+      {% set discourse_title = [title, " - Datasets -"] %}
+      {% set title_search =  discourse_title|join %}
+      {% if h.discourse_comments_count(title_search) > 0 %}
+      <li><a href="{{ h.url_for(controller='package', action='read', id=package.name) }}#discourse-comments" class="label" data-format="comment"><img src="/img/noun-comment-white.png">{{ h.discourse_comments_count(title_search) }}</a></li>
+      {% endif %}
     {% endblock %}
+#}
               </ul>
             {% endblock %}
           {% endif %}
