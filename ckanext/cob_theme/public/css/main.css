@@ -989,7 +989,11 @@ header .navbar .nav>li>a {
   font-size: 30px; }
 
 .search-form .search-input.search-giant input {
-  border: 5px solid #091f2f; }
+  color: #000000;
+  font-family: lora;
+  font-size: 18px;
+  font-style: italic;
+  border: 3px solid #091f2f; }
 
 .search-input.control-group.search-giant{
   margin-bottom: 20px; }
@@ -2200,12 +2204,6 @@ label.nav-trigger:after {
   display: inline-block;
 }
 
-.search-form .search-input.search-giant input {
-  font-family: lora;
-  font-style: italic;
-  border: 3px solid #091f2f;
-}
-
 .homepage .search-form .search-input.search-giant input {
   border: 5px solid #091f2f;
 }
@@ -2231,6 +2229,9 @@ label.nav-trigger:after {
   background-image: none;
 }
 #organization-search-form {
+  margin-bottom: 40px;
+}
+#group-search-form {
   margin-bottom: 40px;
 }
 
@@ -2691,7 +2692,6 @@ content: "";
   text-transform : none;
   font-family: lora;
   font-weight: normal;
-
 }
 #field-order-by{
   display: none;
