@@ -62,11 +62,6 @@ $("#field-order-by-stylable dd ul li a").click(function() {
     nowSelected.attr("selected","selected");
 
     // trigger submit
-    if ($("#dataset-search-form")){
-        $("#dataset-search-form").find(".control-order-by").find('[type="submit"]').click();
-    }
-    if($("#organization-search-form")){
-        $("#organization-search-form").find(".control-order-by").find('[type="submit"]').click();
-    }
-})
+    $(".control-order-by").find('[type="submit"]').click();
 
+})
