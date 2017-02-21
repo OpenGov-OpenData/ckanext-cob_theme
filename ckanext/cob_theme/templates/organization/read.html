@@ -13,7 +13,7 @@
         (_('Name Ascending'), 'title_string asc'),
         (_('Name Descending'), 'title_string desc'),
         (_('Last Modified'), 'metadata_modified desc'),
-        (_('Popular'), 'views_total desc') if g.tracking_enabled else (false, false) ]
+        (_('Total Views'), 'views_total desc') if g.tracking_enabled else (false, false) ]
       %}
       {% snippet 'snippets/search_form.html', form_id='organization-datasets-search-form', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, placeholder=_('Search datasets...'), show_empty=request.params, fields=c.fields %}
     {% endblock %}

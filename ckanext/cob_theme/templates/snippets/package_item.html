@@ -28,7 +28,7 @@
           {% endif %}
           {% set curr_package = h.cob_theme_get_package_metadata(package) %}
           {% if curr_package.tracking_summary.total > 1 %}
-            <div class="package-item-extra">{{curr_package.tracking_summary.total}} views</div>
+            <div class="package-item-extra">{{curr_package.tracking_summary.total}} total views</div>
           {% endif %}
         {% endblock %}
       </div>
