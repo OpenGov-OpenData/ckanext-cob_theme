@@ -48,7 +48,7 @@
                       </li>
                     {% endblock %}
                     {% block header_account_log_out_link %}
-                      <li>
+                      <li class="logout">
                         <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
                           <span class="text">{{ _('Log out') }}</span>
                         </a>

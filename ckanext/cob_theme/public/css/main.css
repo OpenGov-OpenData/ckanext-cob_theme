@@ -568,6 +568,10 @@ ul.menu {
 .homepage .main-browse h2 a {
   color: #091f2f;
   font-size: 30px;
+  text-decoration: none;
+}
+.homepage .main-browse h2 a:hover {
+  color: #288be4;
 }
 .homepage .module-search {
   background-color: transparent;
@@ -594,9 +598,6 @@ ul.menu {
   background-color: #205493;
   padding: 5px 10px 10px;
   zoom: 1;
-}
-.homepage .search-form .search-input.search-giant button {
-  right: 40px;
 }
 input::-webkit-input-placeholder {
   color: #828282;
@@ -809,7 +810,8 @@ input:-ms-input-placeholder {
   height: 126px;
 }
 .media-item strong,
-.dataset-list div {
+.dataset-list .dataset-heading,
+.dataset-list .package-item-extra {
   font-family: "Lora", serif;
   font-style: italic;
 }
@@ -839,9 +841,6 @@ input:-ms-input-placeholder {
 .module-content-about img {
   display: block;
   margin: 40px 0 10px 0;
-}
-.module-content.search-form input {
-  width: 60%;
 }
 .module-footer {
   padding: 0;
@@ -970,9 +969,8 @@ header .navbar .nav>li>a {
   width: 100%;
 }
 .navbar-static-top .logo img {
-  height: 40px;
-  width: 280px;
-  margin-top: 2.5px;
+  height: 20px;
+  margin-top: 13px;
 }
 .navigation-wrapper {
   background-color: #fff;
@@ -1005,6 +1003,7 @@ header .navbar .nav>li>a {
   font-family: lora;
   font-size: 20px;
   border: 3px solid #091f2f;
+  line-height: normal;
   padding: 10px;
 }
 .search-input.control-group.search-giant {
@@ -1033,12 +1032,15 @@ header .navbar .nav>li>a {
   padding-bottom: 0;
 }
 .showcase-container {
-  margin-left: -10px;
   margin-top: 30px;
 }
 .showcase-container h2 a {
   color: #091f2f;
   font-size: 30px;
+  text-decoration: none;
+}
+.showcase-container h2 a:hover {
+  color: #288be4;
 }
 .showcase-container .heading,
 .main-browse .heading,
@@ -1325,6 +1327,13 @@ header .navbar .nav>li>a {
     margin: 0 0 15px 180px;
   }
 }
+@media (min-width: 640px) {
+  .homepage .module-search .search-giant {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+}
 @media (min-width: 768px) {
   h1.hero-text-heading.heading {
     text-transform: uppercase;
@@ -1477,6 +1486,11 @@ header .navbar .nav>li>a {
   .homepage .navbar-fixed-top .container,
   .homepage .navbar-fixed-bottom .container {
     width: 85%;
+  }
+  .homepage .module-search .search-giant {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%
   }
   .row:before, .row:after {
     display: table;
@@ -1820,11 +1834,6 @@ header .navbar .nav>li>a {
     padding-right: 0;
   }
 }
-@media screen and (min-width: 620px) {
-  .homepage .search-form .search-input.search-giant button {
-    right: 21%;
-  }
-}
 /*change the color contrast for 508 compliance*/
 .label[data-format=csv], .label[data-format*=csv] {
   background-color: #866b00;
@@ -1867,6 +1876,7 @@ header .navbar .nav>li>a {
   border-right: 3px solid #091f2f;
 }
 .module .pagination {
+  height: 54px;
   border-top: none;
   margin-top: 50px;
 }
@@ -1875,6 +1885,9 @@ header .navbar .nav>li>a {
   border-right: 3px solid #091f2f;
   height: 28px;
   width: 18px;
+}
+.pagination ul>li>a:hover {
+  background-color: #fb4d42;
 }
 .module .pagination>ul {
   border-left: 3px solid #091f2f;
@@ -2077,6 +2090,9 @@ label.nav-trigger:after {
 .main-navigation a:hover {
   background-color: #175182;
 }
+.main-navigation .logout a {
+  background-color: #fb4d42;
+}
 /*side nav style*/
 
 .side-nav-account .account {
@@ -2271,10 +2287,10 @@ footer {
 }
 footer.site-footer {
   background: url(/img/b-logo-light.svg) no-repeat 1.75em center #091f2f;
-  padding: 1.75em 0 1.75em 6em;
+  padding: 0.5em 0 0 6em;
   color: #fff;
   background-size: 54px 90px;
-  background-position-y: 48px;
+  background-position-y: 28px;
 }
 footer.site-footer .container {
   width: 100%;
@@ -2483,9 +2499,10 @@ section.module-resource p.muted.ellipsis {
 }
 .heading-explanation {
   display: block;
-  margin-bottom: 50px;
   font-style: italic;
   font-size: 22px;
+  line-height: normal;
+  margin-bottom: 50px;
 }
 .c3-shape.c3-bar {
   stroke: #288BE4;
@@ -2656,9 +2673,6 @@ ul.media-grid.masonry {
 }
 .module-content.page-header {
   border-bottom: none;
-}
-.slick-slider {
-  margin-left: 15px;
 }
 .dataset-details a, .nav-item a, .tags a {
   text-transform: none;
