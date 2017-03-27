@@ -1047,6 +1047,12 @@ header .navbar .nav>li>a {
 .main-updates .heading {
   border-bottom: 5px solid #091f2f;
 }
+.challenge h2 {
+    font-size: 30px;
+}
+.challenge h2 a {
+    border-bottom: 5px solid #288be4;
+}
 .simple-input .field .btn-search {
   color: #555555;
   right: 10px;
