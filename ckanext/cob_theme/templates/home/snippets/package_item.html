@@ -55,7 +55,7 @@ Example:
         {% endblock %}
         {% block notes %}
           {% if package.metadata_modified %}
-            <div>Modified on {{h.render_datetime(package.metadata_modified)}}</div>
+            <div class="package-item-extra">Modified on {{h.render_datetime(package.metadata_modified)}}</div>
           {% endif %}
         {% endblock %}
         {% block resources %}
