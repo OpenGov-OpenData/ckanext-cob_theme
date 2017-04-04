@@ -24,6 +24,9 @@
 #twitter-widget-0, #twitter-widget-1 {
   height: 620px !important;
 }
+.js .image-upload #field-image-upload {
+  height: 100%;
+}
 a {
   color: #10497C;
   font-family: "Montserrat", sans-serif;
@@ -539,7 +542,6 @@ ul.menu {
   font-size: 22px;
 }
 .hero-text-description.secondary-heading p:first-child strong {
-  font-weight: normal;
   line-height: 52px;
 }
 /*make sure hidden elements are not hidden to assistive technology*/

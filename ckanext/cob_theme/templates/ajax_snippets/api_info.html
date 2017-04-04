@@ -53,13 +53,6 @@ Example
                 <th scope="row">{{ _('Query (via SQL)') }}</th>
                 <td><code>{{ datastore_root_url }}/datastore_search_sql</code></td>
               </tr>
-              <tr>
-                <th scope="row">{{ _('Download as...') }}</th>
-                <td><code>.../datastore/dump/{{resource_id}}?format=[CSV,TSV,JSON,XML]&bom=[True|False]</code><br/>
-                    <a href="/datastore/dump/{{resource_id}}">CSV</a>, <a href="/datastore/dump/{{resource_id}}?format=tsv">TSV</a>, <a href="/datastore/dump/{{resource_id}}?format=json">JSON</a>,
-                    <a href="/datastore/dump/{{resource_id}}?format=xml">XML</a>, <a href="/datastore/dump/{{resource_id}}?bom=true">Excel CSV</a>, <a href="/datastore/dump/{{resource_id}}?format=tsv&bom=true">Excel TSV</a> 
-               </td>
-              </tr>
             </tbody>
           </table>
           <p></p>
