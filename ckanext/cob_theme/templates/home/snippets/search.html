@@ -1,10 +1,9 @@
 {% set tags = h.get_facet_items_dict('tags', limit=10) %}
-{% set placeholder = _('Search Datasets') %}
 
-<div class="module module-search module-narrow module-shallow box">
+<div class="module module-search box">
   <form class="module-content search-form" method="get" action="{% url_for controller='package', action='search' %}">
     <div class="search-input control-group search-giant">
-      <input type="text" class="search" name="q" value="" autocomplete="off" id="data-search-keyword-input-field" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" title= "{{_('Type search term here')}}"/>
+      <input type="text" class="search" name="q" value="" autocomplete="off" id="data-search-keyword-input-field" placeholder="{% block search_placeholder %}Search from {{ h.cob_theme_dataset_count() }} Datasets{% endblock %}" title= "{{_('Type search term here')}}"/>
       <button type="submit">
         <i class="icon-search"></i>
         <span>{{ _('search') }}</span>

@@ -1,6 +1,10 @@
 {% set title = g.site_title %}
 {% set intro = g.site_intro_text %}
 
+{% snippet 'home/snippets/hero_slider.html' %}
+
+{# Use hero slider instead of default hero content #}
+{#
 <div role="main" class="hero">
   <div id="content" tabindex="-1" style="display:none"></div>
   <div class="tint"></div>
@@ -29,13 +33,16 @@
     <img src="/img/b-logo-light.svg" alt="B Logo" data-pin-nopin="true">
   </div>
 </div>
+#}
 <div>
   {% if h.cob_theme_get_showcases() %}
   <div class="main-featured">
     <div class="container">
       <div class="row">
         <div class="span12 col1 showcase-container">
-          <div class="challenge"><h2 style="text-align:center">Enter the <a href="/pages/opendatachallenge">Open Data Challenge</a></h2></div>
+          <div class="challenge">
+            <h2 style="text-align:center">Enter the <a href="/pages/opendatachallenge">Open Data Challenge</a></h2>
+          </div>
           <div class="module-content box">
             <h2 class="heading"><a href="/showcase">Showcases</a></h2>
             <span class="heading-explanation">See what our users are doing with open data. </span>		
