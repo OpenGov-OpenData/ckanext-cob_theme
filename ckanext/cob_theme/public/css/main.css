@@ -4,6 +4,9 @@
 .main-responsive-panel .dataset-list .dataset-item .package-item-extra {
   padding-left: 120px;
 }
+#canonical {
+  padding: 10px 15px;
+}
 #dataset-map .module-heading .action {
   color: #ffffff;
 }
@@ -670,11 +673,11 @@ input:-ms-input-placeholder {
   background-color: #fff;
   border: none;
   display: block;
-  height: 165px;
+  height: 150px;
   padding: 0;
 }
 .main-updates li.dataset-item .dataset-heading {
-  padding-top: 30px;
+  padding-top: 25px;
 }
 .masonry-brick .count {
   font-weight: normal;
@@ -1109,8 +1112,8 @@ header .navbar .nav>li>a {
   float: left;
   margin-top: 0;
   margin-right: 20px;
-  height: 165px;
-  width: 170px;
+  height: 150px;
+  width: 160px;
 }
 .unpublishedfeedback.well {
   background-color: transparent;
@@ -1833,7 +1836,7 @@ header .navbar .nav>li>a {
 }
 @media (max-width: 979px) and (min-width: 768px) {
   .span9 {
-    width: 500px;
+    width: 525px;
   }
 }
 @media (max-width: 1200px) and (min-width: 768px) {
@@ -2487,7 +2490,7 @@ keygen, select {
   margin-bottom: 50px;
 }
 .dataset-item {
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 .package-item-extra {
   margin-top: 6px;
@@ -2692,4 +2695,12 @@ ul.media-grid.masonry {
     padding: 40px 20px;
   }
 }
-
+.resource-view .btn {
+  padding: 10px 15px;
+}
+.ckanext-datapreview {
+  padding-top: 3px;
+}
+.resource-view-filters {
+  margin-bottom: 10px;
+}
