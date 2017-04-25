@@ -994,7 +994,7 @@ header .navbar .nav>li>a {
   min-height: 320px;
 }
 .search-form {
-  padding-bottom: 45px;
+  border-bottom: none;
 }
 .search-form .search-input.search-giant button {
   right: 15px;
@@ -2178,8 +2178,7 @@ label.nav-trigger:after {
 }
 .toolbar {
   position: relative;
-  margin-bottom: 40px;
-  padding-top: 30px;
+  padding: 25px 0 5px 0;
   border-top: 0;
   border-right: 0;
   border-bottom: 1px;
@@ -2216,19 +2215,8 @@ label.nav-trigger:after {
 .main-updates li.dataset-item:hover div {
   color: #ffffff;
 }
-.search-form {
-  border-bottom: none;
-  background-size: 383px 9px;
-  margin-bottom: 25px;
-}
 .homepage .search-form {
   background-image: none;
-}
-#organization-search-form {
-  margin-bottom: 40px;
-}
-#group-search-form {
-  margin-bottom: 40px;
 }
 .seal-link {
   position: absolute;
@@ -2513,7 +2501,7 @@ section.module-resource p.muted.ellipsis {
   font-style: italic;
   font-size: 22px;
   line-height: normal;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .c3-shape.c3-bar {
   stroke: #288BE4;
