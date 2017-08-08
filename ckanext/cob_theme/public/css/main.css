@@ -7,6 +7,10 @@
 #canonical {
   padding: 10px 15px;
 }
+#canonical.btn.active {
+  background-color: #d3d3d3;
+  box-shadow: none;
+}
 #dataset-map .module-heading .action {
   color: #ffffff;
 }
@@ -1111,9 +1115,9 @@ header .navbar .nav>li>a {
   background-size: cover;
   float: left;
   margin-top: 0;
-  margin-right: 20px;
+  margin-right: 10px;
   height: 150px;
-  width: 160px;
+  width: 150px;
 }
 .unpublishedfeedback.well {
   background-color: transparent;
@@ -2563,7 +2567,7 @@ section.tags h3 {
 }
 #popular-list .dataset-item .dataset-content img,
 #recent-list .dataset-item .dataset-content img {
-  max-width: 170px;
+  max-width: 150px;
   float: left;
   margin-top: 38px;
 }
