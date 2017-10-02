@@ -9,9 +9,6 @@
     <h3 class="media-heading">{{ organization.display_name }}</h3>
   {% endblock %}
   {% block description %}
-    {% if organization.description %}
-      <p>{{ h.markdown_extract(organization.description, extract_length=80) }}</p>
-    {% endif %}
   {% endblock %}
   {% block datasets %}
     {% if organization.package_count %}
