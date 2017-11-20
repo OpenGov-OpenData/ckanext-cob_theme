@@ -570,7 +570,7 @@ ul.menu {
 }
 .homepage .browse-group-display-nam, .homepage .browse-group-title {
   line-height: 30px;
-  overflow-x: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   text-transform: none;
 }
