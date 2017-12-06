@@ -422,6 +422,11 @@ ul.menu {
 }
 .context-info h1.heading {
   font-size: 17.5px !important;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  word-break: keep-all;
 }
 .control-required {
   color: #ff0000;
@@ -759,11 +764,11 @@ input:-ms-input-placeholder {
   text-transform: none;
 }
 .media-heading {
+  color: #000000;
+  hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   -webkit-hyphens: none;
-  color: #000000;
-  hyphens: none;
   word-break: keep-all;
 }
 .media-item {
