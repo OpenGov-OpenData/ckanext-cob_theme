@@ -16,7 +16,6 @@ Example:
 #}
 {% block package_list %}
   {% if packages %}
-    {% set num_topics = h.discourse_sync() %}
     <ul class="{{ list_class or 'dataset-list unstyled' }}">
       {% block package_list_inner %}
         {% for package in packages %}

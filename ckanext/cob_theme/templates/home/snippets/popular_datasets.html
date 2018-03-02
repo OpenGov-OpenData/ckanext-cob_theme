@@ -1,5 +1,4 @@
 {% set popular_datasets = h.cob_theme_popular_datasets() %}
-{% set num_topics = h.discourse_sync() %}
 
   <div class="module-content box">
     <header>
@@ -33,13 +32,6 @@
                             <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="{{ resource.lower() }}" style="color:white;">{{ resource }}</a>
                           </li>
                         {% endfor %}
-{#
-                        {% set discourse_title = [curr_package.title, " - Datasets -"] %}
-                        {% set title_search =  discourse_title|join %}
-                        {% if h.discourse_comments_count(title_search) > 0 %}
-                        <li><a href="{{ h.url_for(controller='package', action='read', id=package.name) }}#discourse-comments" class="label" data-format="comment"><img src="/img/noun-comment-white.png">{{ h.discourse_comments_count(title_search) }}</a></li>
-                        {% endif %}
-#}
                       </ul>
                     {% endif %}
                   </div>
