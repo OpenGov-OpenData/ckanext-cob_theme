@@ -69,7 +69,7 @@ To install API Documentation:
      cd ckanext-og_theme/docs/
      python generate.py ../../ckan/doc
      cp conf.py ./doc
-     sphinx-build -b html ./doc ../ckanext/og_theme/templates/docs/snippets
+     sphinx-build -b html ./doc ../ckanext/cob_theme/templates/docs/snippets
 
 3. Use the doc-template file to add the header and footer to all the static html files::
      cd ../ckanext/og_theme/templates/docs/snippets
