@@ -9,7 +9,10 @@
     <div class="module-content">
 
       {% set docs_url = "http://docs.ckan.org/en/{0}/sysadmin-guide.html".format('latest') %}
-      {% set zendesk_url = h.zendesk_jwt_url() %}
+      
+      {% if zendesk_url %}
+            {% set zendesk_url = h.zendesk_jwt_url() %}
+      {% endif %}
       {% trans %}
         <p>As a sysadmin user you have full control over this CKAN instance. Proceed with care!</p>
         <p>For guidance on using sysadmin features, see the CKAN  <a href="{{ docs_url }}" target="_blank">sysadmin guide</a></p>

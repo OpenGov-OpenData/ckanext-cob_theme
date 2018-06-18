@@ -101,3 +101,9 @@ ENV/
 .mypy_cache/
 
 .DS_Store
+
+# api docs
+docs/docs
+docs/doc
+build/*
+ckanext/cob_theme/templates/docs/snippets
