@@ -83,12 +83,25 @@ class Cob_ThemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IRoutes)
     
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'cob_theme')
+        toolkit.add_public_directory(config_, 'templates/docs/snippets/_static')
     
+    def before_map(self, m):
+        ctrl='ckanext.cob_theme.controller:CobThemeController'
+        m.redirect("/docs/changelog.html", "/docs/api/index.html")
+        m.connect('docs', '/docs/{path:.*}', action='render_docs', controller= ctrl)
+        return m
+  
+    def after_map(self, m):
+        return m
+
+    # ITemplateHelpers
+
     def get_helpers(self):
         """Register cob_theme_* helper functions"""
         

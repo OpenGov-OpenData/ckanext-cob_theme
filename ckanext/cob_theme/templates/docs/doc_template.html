@@ -1,0 +1,6 @@
+{% extends "page.html" %}
+{% set paths = c.docTitle %}
+
+{% block content %}
+	{% include "docs/snippets/{0}".format(paths) %}
+{% endblock %}  

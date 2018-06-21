@@ -12,7 +12,7 @@
           <ul class="unstyled">
             <li><a href="https://www.boston.gov/departments/mayors-office/martin-j-walsh" target="_blank" title="Martin J. Walsh, a lifelong advocate for working people and a proud product of the City of Boston, was sworn in as the City’s 54th mayor on January 6, 2014.">Mayor Martin J. Walsh</a></li>
             {% block footer_links_ckan %}
-              {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format('latest') %}
+              {% set api_url = '/docs/api/index.html' %}
               <li><a target="_blank" href="{{ api_url }}">{{ _('API Documentation') }}</a></li>
             {% endblock %}
             <li><a href="https://www.boston.gov/departments/analytics-team" target="_blank">{{_('Analytics Team')}}</a></li>

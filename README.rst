@@ -54,3 +54,25 @@ Document any optional config settings here. For example::
     # The minimum number of hours to wait before re-checking a resource
     # (optional, default: 24).
     ckanext.cob_theme.some_setting = some_default_value
+
+-----------------
+API Documentation
+-----------------
+
+To install API Documentation:
+
+1. Install Sphinx and Alabaster theme on your virtual environement::
+     sudo apt-get install python-sphinx
+     pip install -e git+https://github.com/bitprophet/alabaster/#egg=alabaster
+
+2. Run the doc generate python script and sphinx build command to create static html files::
+     cd ckanext-cob_theme/docs/
+     python generate.py ../../ckan/doc
+     cp conf.py ./doc
+     sphinx-build -b html ./doc ../ckanext/cob_theme/templates/docs/snippets
+
+3. Use the doc-template file to add the header and footer to all the static html files::
+     cd ../ckanext/cob_theme/templates/docs/snippets
+     mkdir -p __static/docs
+     mv _static __static/docs
+     mv __static _static
