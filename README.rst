@@ -62,16 +62,19 @@ API Documentation
 To install API Documentation:
 
 1. Install Sphinx and Alabaster theme on your virtual environement::
+
      sudo apt-get install python-sphinx
      pip install -e git+https://github.com/bitprophet/alabaster/#egg=alabaster
 
 2. Run the doc generate python script and sphinx build command to create static html files::
+
      cd ckanext-cob_theme/docs/
      python generate.py ../../ckan/doc
      cp conf.py ./doc
      sphinx-build -b html ./doc ../ckanext/cob_theme/templates/docs/snippets
 
 3. Use the doc-template file to add the header and footer to all the static html files::
+
      cd ../ckanext/cob_theme/templates/docs/snippets
      mkdir -p __static/docs
      mv _static __static/docs
