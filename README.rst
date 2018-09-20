@@ -2,10 +2,9 @@
 ckanext-cob_theme
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+Based on City of Boston Brand Guidelines
 
+https://www.boston.gov/departments/innovation-and-technology/brand-guidelines
 
 ------------
 Requirements
