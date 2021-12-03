@@ -2,7 +2,7 @@
 
     {% block footer_content %}
     <div class="row">
-      <div class="span5 col1 footer-links group-1">
+      <div class="span3 col1 footer-links group-1">
         {% block footer_nav %}
           <ul class="unstyled">
             {% block footer_links %}
@@ -10,7 +10,7 @@
             {% endblock %}
           </ul>
           <ul class="unstyled">
-            <li><a href="https://www.boston.gov/departments/mayors-office/martin-j-walsh" target="_blank" title="Martin J. Walsh, a lifelong advocate for working people and a proud product of the City of Boston, was sworn in as the City’s 54th mayor on January 6, 2014.">Mayor Martin J. Walsh</a></li>
+            <li><a href="https://www.boston.gov/departments/mayors-office/michelle-wu" target="_blank" title="Michelle Wu is the Mayor of Boston ">Mayor Michelle Wu</a></li>
             {% block footer_links_ckan %}
               {% set api_url = '/docs/api/index.html' %}
               <li><a target="_blank" href="{{ api_url }}">{{ _('API Documentation') }}</a></li>
@@ -20,7 +20,7 @@
           </ul>
         {% endblock %}
       </div>
-      <div class="footer-links group-2">
+      <div class="span3 footer-links group-2">
           <ul class="unstyled"">
             <li><a href="/pages/ckan-training-videos">{{ _('Tips for Users') }}</a></li>
             <li><a href="http://www.cityofboston.gov/copyright/privacyandsecurity.asp" target="_blank" title="" class="menu__link">Privacy Policy</a></li>
@@ -29,6 +29,64 @@
             <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOvF55BUFHSI92diqvb-uv0Sbi3VJJcLhNMW4FxFz_Du_ABg/viewform" target="_blank">{{_('Help & Feedback')}}</a></li>
           </ul>
       </div>	
+      <div class="footer-links group-3">
+        <form id = "foot-letter" action="https://contactform.boston.gov/subscriptions?list=101" method="POST" class="bos-newsletter" novalidate="" target="_blank">
+          <div class="fs">
+            <div class="fs-c">
+              <div class="txt">
+                <p id = "newsletter">SIGN UP FOR OUR NEWSLETTER! </p>
+                <input name="subscriber[email]" type="email" value="" placeholder="Email address" class="txt-f bos-newsletter-email" id="signupEmail">
+              </div>
+              <div class="txt">
+                <input name="subscriber[zipcode]" type="text" value="" placeholder="Zip Code" class="txt-f bos-newsletter-zip" size="10" id="signupZip">
+              </div>
+            </div>
+            <p class="t--subinfo t--err m-t100"></p>
+            <div class="bc bc--r">
+              <button type="submit" class="btn btn-primary btn-small">Sign Up</button>
+            </div>
+          </div>
+        </form>
+        <script type="text/javascript">
+          function formValidate(){
+            var checkEmailFormat = /^[A-Z0-9_'%=+!`#~$*?^{}&|-]+([\.][A-Z0-9_'%=+!`#~$*?^{}&|-]+)*@[A-Z0-9-]+(\.[A-Z0-9-]+)+$/i;
+            var checkZipFormat = /^\d{5,5}$/;
+            if ($("#signupEmail").val() == '' && $("#signupZip").val() == '' ) {
+                $('.t--subinfo.t--err').html('Email and Zip Code are blank.');
+            }
+            else if (!checkEmailFormat.test($("#signupEmail").val()) ) {
+                $('.t--subinfo.t--err').html('Email value is invalid.');
+            }
+            else if (!checkZipFormat.test($("#signupZip").val()) ) {
+                $('.t--subinfo.t--err').html('Zip Code value is invalid.');
+            }
+            else{
+              formSubmit();
+            }
+          }
+          function formSubmit(){
+            const form = $("#foot-letter");
+            const url = form.attr('action');
+            $.ajax({
+                type: "POST",
+                url: url,
+                crossDomain: true,
+                data: form.serialize(), // serializes the form's elements.
+            })
+            .done(function(res){
+                  const successMessage = "<div class='t--info'>Great. You'll get your first email soon.</div>"
+                  $('#foot-letter').html(successMessage);
+            })
+            .fail(function(res){
+                  $('.t--subinfo.t--err').html('There was an error. Please try again.');
+            });
+          }
+          $("#foot-letter").submit(function(e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            formValidate();
+          });
+        </script>
+    </div>
 
       <div class="attribution">
         {% block footer_attribution %}

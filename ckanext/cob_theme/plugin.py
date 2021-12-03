@@ -49,7 +49,14 @@ def showcases(num=24):
 
 def get_package_metadata(package):
     """Return the metadata of a dataset"""
-    result = toolkit.get_action('package_show')(None, {'id': package.get('name'), 'include_tracking': True})
+    try:
+        result = toolkit.get_action('package_show')(None, {'id': package.get('name'), 'include_tracking': True})
+    except:
+        print("Error in retrieving dataset metadata: {}".format(package.get('id', '')))
+        package_metadata = package
+        package_metadata['tracking_summary'] = {}
+        package_metadata['tracking_summary']['total'] = 0
+        return package_metadata
     return result
 
 
