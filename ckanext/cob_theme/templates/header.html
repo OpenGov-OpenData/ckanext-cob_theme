@@ -35,7 +35,7 @@
   <div class="navigation-wrapper">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
-        <div class="nav-collapse collapse">
+        <div class="navbar-collapse collapse">
           {% block header_site_navigation %}
             <ul class="nav nav-pills">
               {% block header_site_navigation_tabs %}
@@ -56,7 +56,7 @@
             {% block header_account_container_content %}
               {% if c.userobj %}
                 <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
-                  <ul class="unstyled">
+                  <ul class="list-unstyled">
                     {% block header_account_logged %}
                       {% if c.userobj.sysadmin %}
                         <li>
@@ -99,7 +99,7 @@
                 </div>
               {% else %}
                 <nav class="account not-authed">
-                  <ul class="unstyled">
+                  <ul class="list-unstyled">
                     {% block header_account_notlogged %}
                       <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
                       {% if h.check_access('user_create') %}

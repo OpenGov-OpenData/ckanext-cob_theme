@@ -20,7 +20,7 @@
   <div class="main-featured">
     <div class="container">
       <div class="row">
-        <div class="span12 col1 showcase-container">
+        <div class="col-md-12 col1 showcase-container">
           <div class="module-content box" style="padding-bottom:0px">
             <h2 class="heading" style="margin-bottom:0px"><a href="/showcase">Showcases</a></h2>
             {% snippet 'home/snippets/showcase_list.html', showcases=h.cob_theme_get_showcases() %}
@@ -34,7 +34,7 @@
   <div class="main-browse">
     <div class="container">
       <div class="row">
-        <div class="span12 col1">
+        <div class="col-md-12 col1">
           <div class="module-content box">
             <h2 class="heading"><a href="/group">Groups</a></h2>
             {% for group in h.cob_theme_get_groups() %}
@@ -56,10 +56,10 @@
   <div class="main-updates">
     <div class="container">
       <div class="row">
-        <div class="span6 col1">
+        <div class="col-md-6 col1">
           {% snippet 'home/snippets/popular_datasets.html' %}
         </div>
-        <div class="span6 col2">
+        <div class="col-md-6 col2">
           {% snippet 'home/snippets/recent_datasets.html' %}
         </div>
       </div>

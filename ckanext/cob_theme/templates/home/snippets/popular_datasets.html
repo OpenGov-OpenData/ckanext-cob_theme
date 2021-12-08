@@ -7,7 +7,7 @@
     </header>
     <section>
       {% block package_list %}
-        <ul id="popular-list" class="unstyled dataset-list">
+        <ul id="popular-list" class="list-unstyled dataset-list">
           {% block package_list_inner %}
             {% for package in popular_datasets %}
               {% set truncate_title = truncate_title or 50 %}
@@ -26,7 +26,7 @@
                     {% set curr_package = h.cob_theme_get_package_metadata(package) %}
                     <div class="package-item-extra">{{curr_package.tracking_summary.recent}} recent views</div>
                     {% if curr_package.resources %}
-                      <ul class="dataset-resources unstyled">
+                      <ul class="dataset-resources list-unstyled">
                         {% for resource in h.dict_list_reduce(curr_package.resources, 'format') %}
                           <li>
                             <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="{{ resource.lower() }}" style="color:white;">{{ resource }}</a>

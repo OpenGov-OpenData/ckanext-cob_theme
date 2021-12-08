@@ -18,7 +18,7 @@
           {% block header_account_container_content %}
             {% if c.userobj %}
               <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
-                <ul class="unstyled">
+                <ul class="list-unstyled">
                   {% block header_account_logged %}
                     {% if c.userobj.sysadmin %}
                       <li>
@@ -60,7 +60,7 @@
               </div>
             {% else %}
               <nav class="account not-authed">
-                <ul class="unstyled">
+                <ul class="list-unstyled">
                   {% block header_account_notlogged %}
                     <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
                     {% if h.check_access('user_create') %}
@@ -124,14 +124,14 @@
               {{ super() }}
             {% endblock %}
             {% block primary %}
-              <div class="primary span9 main-responsive-panel">
+              <div class="primary col-md-9 main-responsive-panel">
                 {% block primary_content %}
                   {{ super() }}
                 {% endblock %}
               </div>
             {% endblock %}
             {% block secondary %}
-              <aside class="secondary span3 aside-fixed-panel">
+              <aside class="secondary col-md-3 aside-fixed-panel">
                 {% block secondary_content %}
                   {{ super() }}
                 {% endblock %}

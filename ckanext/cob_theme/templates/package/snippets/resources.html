@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
         {% block resources_list %}
-          <ul class="unstyled nav nav-simple">
+          <ul class="list-unstyled nav nav-simple">
             {% for resource in resources %}
               <li class="nav-item{{ ' active' if active == resource.id }}">
                 {% if resource.name_translated %}
